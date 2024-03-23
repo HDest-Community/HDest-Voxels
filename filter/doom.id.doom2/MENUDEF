@@ -1,0 +1,4 @@
+AddOptionMenu "VoxelDoomOptionMenu"
+{
+	CheelloOption "$VOXELDOOMMNU_ICONVOX",	"$VOXELDOOMMNU_ICONVOX_TOOLTIP", "cheello_iconofsinvoxel", "OnOff"
+}

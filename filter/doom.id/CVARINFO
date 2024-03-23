@@ -1,0 +1,7 @@
+// Anything that physically alters Actor angles MUST be a server CVar, otherwise desyncs in multiplayer WILL happen!!!
+server int cheello_spinningpickups = 1;
+server bool cheello_smoothmonsterrotation = false;
+server bool cheello_monsterpitchtotarget = false;
+server bool cheello_monsterfaceskiller = true;
+
+server bool cheello_noprecache = false;

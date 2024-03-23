@@ -1,0 +1,234 @@
+//===========================================================================
+//
+// CHEELLO VOXEL DOOM
+//
+// ZScript code: Copyright (C) 2022 - 2023 Nash Muhandes
+//
+// License: MIT
+//
+//===========================================================================
+
+//===========================================================================
+//
+// Chaingun Guy
+//
+//===========================================================================
+
+// class CheelloChaingunGuy : ChaingunGuy replaces ChaingunGuy
+// {
+// 	mixin CheelloMonsterMixin;
+
+// 	States
+// 	{
+// 	See:
+// 		CPOS AABBCCDD 3 A_CheelloChase();
+// 		Loop;
+// 	Missile:
+// 		CPOS E 10 A_CheelloFaceTarget(); TNT1 A 0 A_CheelloStopFacingTarget();
+// 		CPOS FE 4 Bright A_CPosAttack();
+// 		CPOS F 1 Bright A_CPosRefire();
+// 		Goto Missile + 2;
+// 	}
+// }
+
+//===========================================================================
+//
+// Hell Knight
+//
+//===========================================================================
+
+// class CheelloHellKnight : HellKnight replaces HellKnight
+// {
+// 	mixin CheelloMonsterMixin;
+
+// 	Default
+// 	{
+// 		BloodColor "30 67 23";
+// 	}
+
+// 	States
+// 	{
+// 	See:
+// 		BOS2 AABBCCDD 3 A_CheelloChase();
+// 		Loop;
+// 	Melee:
+// 	Missile:
+// 		BOS2 EF 8 A_CheelloFaceTarget(); TNT1 A 0 A_CheelloStopFacingTarget();
+// 		BOS2 G 8 A_BruisAttack();
+// 		Goto See;
+// 	}
+// }
+
+//===========================================================================
+//
+// Arachnotron
+//
+//===========================================================================
+
+// class CheelloArachnotron : Arachnotron replaces Arachnotron
+// {
+// 	mixin CheelloMonsterMixin;
+
+// 	States
+// 	{
+// 	See:
+// 		BSPI A 20;
+// 		BSPI A 3 A_BabyMetal();
+// 		BSPI ABBCC 3 A_CheelloChase();
+// 		BSPI D 3 A_BabyMetal();
+// 		BSPI DEEFF 3 A_CheelloChase();
+// 		Goto See + 1;
+// 	Missile:
+// 		BSPI A 20 A_CheelloFaceTarget(); TNT1 A 0 A_CheelloStopFacingTarget();
+// 		BSPI G 4 Bright A_BspiAttack();
+// 		BSPI H 4 Bright;
+// 		BSPI H 1 Bright A_SpidRefire();
+// 		Goto Missile + 2;
+// 	}
+// }
+
+//===========================================================================
+//
+// Pain Elemental
+//
+//===========================================================================
+
+// class CheelloPainElemental : PainElemental replaces PainElemental
+// {
+// 	mixin CheelloMonsterMixin;
+
+// 	States
+// 	{
+// 	See:
+// 		PAIN AABBCC 3 A_CheelloChase();
+// 		Loop;
+// 	Missile:
+// 		PAIN D 5 A_CheelloFaceTarget(); TNT1 A 0 A_CheelloStopFacingTarget();
+// 		PAIN E 5 A_CheelloFaceTarget(); TNT1 A 0 A_CheelloStopFacingTarget();
+// 		PAIN F 5 Bright A_CheelloFaceTarget(); TNT1 A 0 A_CheelloStopFacingTarget();
+// 		PAIN F 0 Bright A_PainAttack();
+// 		Goto See;
+// 	}
+// }
+
+//===========================================================================
+//
+// Revenant
+//
+//===========================================================================
+
+// class CheelloRevenant : Revenant replaces Revenant
+// {
+// 	mixin CheelloMonsterMixin;
+
+// 	States
+// 	{
+// 	See:
+// 		SKEL AABBCCDDEEFF 2 A_CheelloChase();
+// 		Loop;
+// 	Melee:
+// 		SKEL G 0 A_CheelloFaceTarget(); TNT1 A 0 A_CheelloStopFacingTarget();
+// 		SKEL G 6 A_SkelWhoosh();
+// 		SKEL H 6 A_CheelloFaceTarget(); TNT1 A 0 A_CheelloStopFacingTarget();
+// 		SKEL I 6 A_SkelFist();
+// 		Goto See;
+// 	}
+// }
+
+//===========================================================================
+//
+// Mancubus
+//
+//===========================================================================
+
+// class CheelloFatso : Fatso replaces Fatso
+// {
+// 	mixin CheelloMonsterMixin;
+
+// 	States
+// 	{
+// 	See:
+// 		FATT AABBCCDDEEFF 4 A_CheelloChase();
+// 		Loop;
+// 	Missile:
+// 		FATT G 20 A_FatRaise();
+// 		FATT H 10 Bright A_FatAttack1();
+// 		FATT IG 5 A_CheelloFaceTarget(); TNT1 A 0 A_CheelloStopFacingTarget();
+// 		FATT H 10 Bright A_FatAttack2();
+// 		FATT IG 5 A_CheelloFaceTarget(); TNT1 A 0 A_CheelloStopFacingTarget();
+// 		FATT H 10 Bright A_FatAttack3();
+// 		FATT IG 5 A_CheelloFaceTarget(); TNT1 A 0 A_CheelloStopFacingTarget();
+// 		Goto See;
+// 	}
+// }
+
+// class CheelloFatShot : FatShot replaces FatShot
+// {
+// 	mixin CheelloMonsterMixin;
+
+// 	States
+// 	{
+// 	Death:
+// 		TNT1 A 0
+// 		{
+// 			// remove alpha effects from the explosion voxel due to GZDoom glitch
+// 			bZDoomTrans = false;
+// 			A_SetRenderStyle(1., STYLE_Normal);
+// 		}
+// 		MISL B 8 Bright;
+// 		MISL C 6 Bright;
+// 		MISL D 4 Bright;
+// 		Stop;
+// 	}
+// }
+
+//===========================================================================
+//
+// Arch Vile
+//
+//===========================================================================
+
+// class CheelloArchvile : Archvile replaces Archvile
+// {
+// 	mixin CheelloMonsterMixin;
+
+// 	States
+// 	{
+// 	See:
+// 		VILE AABBCCDDEEFF 2 A_VileChase();
+// 		Loop;
+// 	Missile:
+// 		VILE G 0 Bright A_VileStart();
+// 		VILE G 10 Bright A_CheelloFaceTarget(); TNT1 A 0 A_CheelloStopFacingTarget();
+// 		VILE H 8 Bright A_VileTarget();
+// 		VILE IJKLMN 8 Bright A_CheelloFaceTarget(); TNT1 A 0 A_CheelloStopFacingTarget();
+// 		VILE O 8 Bright A_VileAttack();
+// 		VILE P 20 Bright;
+// 		Goto See;
+// 	Heal:
+// 		// temporary hack!!! (see https://github.com/ZDoom/gzdoom/issues/1973)
+// 		VILE [ 10 Bright;
+// 		VIL2 A 10 Bright;
+// 		VILE ] 10 Bright;
+// 		Goto See;
+// 	}
+// }
+
+//===========================================================================
+//
+// Spawn shot (Romero boss cube)
+//
+//===========================================================================
+
+class CheelloSpawnShot : SpawnShot replaces SpawnShot
+{
+	override void Tick(void)
+	{
+		Super.Tick();
+
+		if (!bNoTimeFreeze && isFrozen())
+			return;
+
+		CheelloVoxStatics.A_Spin(self);
+	}
+}

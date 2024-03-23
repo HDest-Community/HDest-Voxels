@@ -1,0 +1,22 @@
+[enu default]
+
+// { ENGLISH (US) LANGUAGE DEFINITION }
+
+OPTMNU_VOXELDOOMOPTS = "VOXEL DOOM Options";
+
+VOXELDOOMMNU_SPINITEMS = "Spinning items";
+VOXELDOOMMNU_SMOOTHROT = "Smooth monster rotation";
+VOXELDOOMMNU_MPTT = "Pitch adjustment for flying monsters";
+VOXELDOOMMNU_FACEKILLER = "Monster faces player upon death";
+VOXELDOOMMNU_PRECACHE = "Precache voxels";
+VOXELDOOMMNU_ICONVOX = "Voxelized Icon of Sin";
+
+VOXELDOOMMNU_SPINITEMS_TOOLTIP = "";
+VOXELDOOMMNU_SMOOTHROT_TOOLTIP = "Monsters will smoothly rotate to face their target.";
+VOXELDOOMMNU_MPTT_TOOLTIP = "Flying monsters will adjust their pitch to face their target.";
+VOXELDOOMMNU_FACEKILLER_TOOLTIP = "Monster will turn to face the player that killed it.";
+VOXELDOOMMNU_PRECACHE_TOOLTIP = "Preloads complete voxel animation frames upon entering a level. Reduces in-game stuttering at the expense of GPU memory usage.";
+VOXELDOOMMNU_ICONVOX_TOOLTIP = "";
+
+OPTVAL_VOXELDOOM_SPINALL = "Weapons and powerups";
+OPTVAL_VOXELDOOM_SPIN_NODROPPED = "Exclude dropped weapons";

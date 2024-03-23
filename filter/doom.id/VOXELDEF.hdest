@@ -1,0 +1,332 @@
+
+// ZM66 Magazine
+ZMAGA = "ZMAGA" { scale = 0.5 }
+ZMAGB = "ZMAGB" { scale = 0.5 }
+ZMAGC = "ZMAGC" { scale = 0.5 }
+
+//Backpack
+BPAKB = "BPAKB" {}
+BPAKC = "BPAKC" {}
+
+// Medikit
+MEDIB = "MEDIB" { angleoffset = 180 UseActorPitch }
+MEDIC = "MEDIC" { angleoffset = 180 UseActorPitch }
+
+// Hunter
+HUNTG = "HUNTA" {}
+HUNTF = "HUNTB" {}
+HUNTE = "HUNTC" {}
+HUNTD = "HUNTD" {}
+HUNTC = "HUNTE" {}
+HUNTB = "HUNTF" {}
+HUNTA = "HUNTG" {}
+
+// Slayer
+slaya = "slaya" { angleoffset = 180 }
+slayb = "slayb" { angleoffset = 180 }
+slayc = "slayc" { angleoffset = 180 }
+slayd = "slayd" { angleoffset = 180 }
+slaye = "slaye" { angleoffset = 180 }
+slayf = "slayf" { angleoffset = 180 }
+slayg = "slayg" { angleoffset = 180 }
+
+// Brontornis
+blsta = "blsta" {}
+
+// Plant Bits
+SPLTA = "SPLTA" {}
+SPLTB = "SPLTB" {}
+SPLTC = "SPLTC" {}
+SPLTD = "SPLTD" {}
+SPLTE = "SPLTE" {}
+SPLTF = "SPLTF" {}
+SPLTG = "SPLTG" {}
+
+// H.E.R.P.
+HERPA = "HERPA" { angleoffset = 270 }
+HERPB = "HERPB" { angleoffset = 270 }
+HERPC = "HERPC" { angleoffset = 270 }
+
+// D.E.R.P.
+DERPA = "DERPA" { angleoffset = 270 }
+DERPC = "DERPC" { angleoffset = 270 }
+DERPD = "DERPD" { angleoffset = 270 }
+
+// Babuin
+srg2a = "srg2a" { scale = 0.9 }
+srg2b = "srg2b" { scale = 0.9 }
+srg2c = "srg2c" { scale = 0.9 }
+srg2d = "srg2d" { scale = 0.9 }
+srg2e = "srg2e" { scale = 0.9 }
+srg2f = "srg2f" { scale = 0.9 }
+srg2g = "srg2g" { scale = 0.9 }
+srg2h = "srg2h" { scale = 0.9 }
+srg2i = "srg2i" { scale = 0.9 }
+srg2j = "srg2j" { scale = 0.9 }
+srg2k = "srg2k" { scale = 0.9 }
+srg2l = "srg2l" { scale = 0.9 }
+srg2m = "srg2m" { scale = 0.9 }
+srg2n = "srg2n" { scale = 0.9 }
+
+// Revolver
+revla = "revla" { angleoffset = 180 }
+
+// Liberator
+brfla = "brfla" { angleoffset = 180 }
+brflb = "brflb" { angleoffset = 180 }
+brflc = "brflc" { angleoffset = 180 }
+brfld = "brfld" { angleoffset = 180 }
+brfle = "brfle" { angleoffset = 180 }
+brflf = "brflf" { angleoffset = 180 }
+brflg = "brflg" { angleoffset = 180 }
+brflh = "brflh" { angleoffset = 180 }
+brlla = "brlla" { angleoffset = 180 }
+brllb = "brllb" { angleoffset = 180 }
+brllc = "brllc" { angleoffset = 180 }
+brlld = "brlld" { angleoffset = 180 }
+brlle = "brlle" { angleoffset = 180 }
+brllf = "brllf" { angleoffset = 180 }
+brllg = "brllg" { angleoffset = 180 }
+brllh = "brllh" { angleoffset = 180 }
+
+// ZM66
+//fix by dastrukar
+rifla = "rifla" { angleoffset = 180 }
+riflb = "rifla" { angleoffset = 90 }
+riflc = "riflc" { angleoffset = 90 }
+rifld = "rifld" { angleoffset = 180 }
+rifsa = "rifsa" { angleoffset = 180 }
+rifsd = "rifsd" { angleoffset = 180 }
+rigla = "rigla" { angleoffset = 180 }
+riglb = "rigla" { angleoffset = 90 }
+riglc = "riglc" { angleoffset = 90 }
+rigld = "rigld" { angleoffset = 180 }
+rigsa = "rigsa" { angleoffset = 180 }
+rigsd = "rigsd" { angleoffset = 180 }
+
+// Liberator Magazine
+rmaga = "rmaga" { angleoffset = 180 scale = 0.6 }
+rmagb = "rmagb" { angleoffset = 180 scale = 0.6 }
+
+// Ejected Shell
+eshla = "eshla" { scale = 0.7 }
+shela = "shela" { scale = 0.7 }
+shl1a = "eshlc" { scale = 0.7 }
+eshlb = "eshlb" { scale = 0.7 }
+eshlc = "eshlc" { scale = 0.7 }
+eshld = "eshlb" { angleoffset = 180 scale = 0.7 }
+eshle = "eshla" { angleoffset = 180 scale = 0.7 }
+eshlf = "eshlf" { scale = 0.7 }
+eshlg = "eshlg" { scale = 0.7 }
+eshlh = "eshlf" { angleoffset = 180 scale = 0.7 }
+
+//syrga = "syrba" { scale = 0.8 }
+
+// Rocquette
+roqpa = "roqpa" { scale = 0.8 }
+rocqa = "rocqa" { scale = 0.9 UseActorPitch }
+rocqb = "rocqa" { scale = 0.9 UseActorPitch }
+
+// 7mm Bundle
+ten7a = "ten7a" {}
+
+// 9mm Bundle
+ten9a = "ten9a" {}
+
+// Boss Rifle
+borfa = "borfa" { angleoffset = 90 }
+
+// Brontornis Round
+broca = "broca" {}
+
+// Brontornis Round Casing
+bshxa = "bshxa" {}
+bshxb = "bshxb" {}
+bshxc = "bshxc" {}
+
+// Frag Grenade
+fraga = "fraga" { angleoffset = 180 UseActorPitch }
+fragb = "fragb" { angleoffset = 180 UseActorPitch }
+fragc = "fragc" { angleoffset = 180 UseActorPitch }
+fragd = "fragb" { angleoffset = 0 UseActorPitch }
+frage = "fragc" { angleoffset = 0 UseActorPitch }
+fragf = "fragf" { angleoffset = 180 UseActorPitch }
+
+// Frag Grenade Pin
+frgpa = "frgpa" { angleoffset = 180 UseActorPitch }
+
+// .355 Box
+3boxa = "3boxa" { angleoffset = 180 }
+
+// 7mm Box
+7boxa = "7boxa" { angleoffset = 180 }
+
+// 9mm Box
+9boxa = "9boxa" { angleoffset = 180 }
+
+// Garrison Armor
+armsa = "arm1a" { angleoffset = 180 }
+armsb = "arm1a" { angleoffset = 180 }
+
+// Combat Armor
+armca = "armca" { angleoffset = 180 } 
+armcb = "armca" { angleoffset = 180 }
+
+// Door Buster
+bgrna = "bgrna" { angleoffset = 180 }
+bgrnb = "bgrnb" { angleoffset = 180 }
+
+// Blood Pack
+pblda = "pblda" { angleoffset = 180 }
+
+// Jetpack
+jpoda = "jpoda" {}
+jpaka = "jpaka" {}
+
+// Cell Battery
+cella = "cella" {}
+cellb = "cellb" { angleoffset = 180 }
+cellc = "cellc" { angleoffset = 180 }
+celld = "celld" {}
+
+// Pistol Magazine
+clp2a = "clp2a" { scale = 0.5 }
+clp2b = "clp2b" { scale = 0.5 }
+clp3a = "clp3a" { scale = 0.5 }
+clp3b = "clp3b" { scale = 0.5 }
+
+// IED Kit
+iedka = "iedka" {}
+iedsa = "iedsa" {}
+iedsb = "iedsb" {}
+iedsc = "iedsc" {}
+
+// Capture the Flag
+hcapa = "hcapa" {}
+
+// Pistol
+pistb = "pistb" { angleoffset = 180 }
+pistc = "pistc" { angleoffset = 180 }
+pistd = "pistd" { angleoffset = 180 }
+
+// Range Infinite Ammo Box
+ambxa = "ambxa" {}
+ambxb = "ambxb" {}
+
+// 7mm Reloader
+rldra = "rldra" { angleoffset = 180 }
+
+// 7mm Clip
+rclpa = "rclpa" { angleoffset = 180 }
+rclpb = "rclpb" { angleoffset = 180 }
+rclpc = "rclpc" { angleoffset = 180 }
+rclpd = "rclpd" { angleoffset = 180 }
+rclpe = "rclpe" { angleoffset = 180 }
+
+// SMG
+smgna = "smgna" {/* angleoffset = 180 */}
+smgnb = "smsnb" {/* angleoffset = 180 */}
+smsna = "smgna" {/* angleoffset = 180 */}
+smsnb = "smsnb" {/* angleoffset = 180 */}
+
+// Rocket Launcher
+launa = "launb" { angleoffset = 270 }
+launb = "launa" { angleoffset = 270 }
+
+// Vulcanette
+vulca = "vulca" {}
+
+// Blooper
+blopa = "blopa" { angleoffset = 180 }
+
+// Squad Summoner
+prifa = "prifa" { angleoffset = 180 }
+
+// Ladder
+ladda = "lada" {}
+laddb = "ladb" {}
+laddc = "ladc" {}
+laddd = "ladd" { angleoffset = 180 }
+
+// Balefire
+bal7a = "bal7a" { UseActorPitch }
+bal7b = "bal7b" { UseActorPitch }
+
+// Fire
+fir7a = "fir7a" {}
+fir7b = "fir7b" {}
+//rclpf = "rclpf" {}
+
+// Chainsaw
+csawa = "csawa" { angleoffset = 90 }
+
+// Pistol
+pista = "pista" { angleoffset = 180 }
+
+// Thunderbuster
+plasa = "plasa" {}
+
+// BFG9000
+bfuga = "bfuga" { angleoffset = 270 }
+
+// Light-amp Goggles
+// pvisa = "pvisa" {}
+// pvisb = "pvisb" {}
+
+// Full Map
+// pmapa = "pmapa" {}
+// pmapb = "pmapb" {}
+// pmapc = "pmapc" {}
+// pmapd = "pmapd" {}
+pmape = "pmape" {}
+pmapf = "pmapf" {}
+pmapg = "pmapg" {}
+pmaph = "pmaph" {}
+
+// Radsuit
+// suita = "suita" {}
+
+// Blues Potion
+ectpa = "bon1a" { UseActorPitch }
+ectpb = "bon1b" { UseActorPitch }
+ectpc = "bon1c" { UseActorPitch }
+ectpd = "bon1d" { UseActorPitch }
+ectpe = "bon1a" { UseActorPitch }
+ectpf = "bon1d" { UseActorPitch }
+
+// Health Bonus
+// bon1a = "bon1a" { UseActorPitch }
+// bon1b = "bon1b" { UseActorPitch }
+// bon1c = "bon1c" { UseActorPitch }
+// bon1d = "bon1d" { UseActorPitch }
+
+// Armor Bonus
+bon2a = "bon2a" {}
+bon2b = "bon2b" {}
+bon2c = "bon2c" {}
+bon2d = "bon2d" {}
+bon2e = "bon2d" {}
+
+// Blue Key
+bkeya = "bkeya" {}
+bkeyb = "bkeyb" {}
+
+// Red Key
+rkeya = "rkeya" {}
+rkeyb = "rkeyb" {}
+
+// Yellow Key
+ykeya = "ykeya" {}
+ykeyb = "ykeyb" {}
+
+// Blue Skull
+bskua = "bskua" {}
+bskub = "bskub" {}
+
+// Red Skull
+rskua = "rskua" {}
+rskub = "rskub" {}
+
+// Yellow Skull
+yskua = "yskua" {}
+yskub = "yskub" {}

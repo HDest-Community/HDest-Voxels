@@ -1,0 +1,354 @@
+//===========================================================================
+//
+// CHEELLO VOXEL DOOM
+//
+// ZScript code: Copyright (C) 2022 - 2023 Nash Muhandes
+//
+// License: MIT
+//
+//===========================================================================
+
+class CheelloIconOfSin : Actor
+{
+	const PIECEPOS_HORZ_LEFT = -256.;
+	const PIECEPOS_HORZ_MID = 0.;
+	const PIECEPOS_HORZ_RIGHT = 256.;
+
+	const PIECEPOS_VERT_TOP = 256.;
+	const PIEPOCE_VERT_MID = 128.;
+	const PIECEPOS_VERT_BTM = 0.;
+
+	Vector3 savedWorldOffset;
+	Vector3 debugWorldOffset;
+
+	//===========================================================================
+	//
+	//
+	//
+	//===========================================================================
+
+	Default
+	{
+		Radius 16;
+		Height 32;
+		-SOLID
+	}
+
+	//===========================================================================
+	//
+	//
+	//
+	//===========================================================================
+
+	override void PostBeginPlay(void)
+	{
+		Super.PostBeginPlay();
+
+		if (self.GetClass() == 'CheelloIconOfSin')
+		{
+			SpawnPiece(PIECEPOS_HORZ_LEFT,	PIECEPOS_VERT_TOP,	"CheelloIconOfSinLeftHorn");
+			SpawnPiece(PIECEPOS_HORZ_MID,	PIECEPOS_VERT_TOP,	"CheelloIconOfSinForehead");
+			SpawnPiece(PIECEPOS_HORZ_RIGHT,	PIECEPOS_VERT_TOP,	"CheelloIconOfSinRightHorn");
+
+			SpawnPiece(PIECEPOS_HORZ_LEFT,	PIEPOCE_VERT_MID,	"CheelloIconOfSinLeftPanelMid");
+			SpawnPiece(PIECEPOS_HORZ_MID,	PIEPOCE_VERT_MID,	"CheelloIconOfSinFace");
+			SpawnPiece(PIECEPOS_HORZ_RIGHT,	PIEPOCE_VERT_MID,	"CheelloIconOfSinRightPanelMid");
+
+			SpawnPiece(PIECEPOS_HORZ_LEFT,	PIECEPOS_VERT_BTM,	"CheelloIconOfSinLeftPanelBottom");
+			SpawnPiece(PIECEPOS_HORZ_MID,	PIECEPOS_VERT_BTM,	"CheelloIconOfSinJaw");
+			SpawnPiece(PIECEPOS_HORZ_RIGHT,	PIECEPOS_VERT_BTM,	"CheelloIconOfSinRightPanelBottom");
+
+			SpawnPiece(PIECEPOS_HORZ_LEFT,	PIECEPOS_VERT_TOP,	"CheelloIconOfSinBackgroundHorns");
+			SpawnPiece(PIECEPOS_HORZ_MID,	PIECEPOS_VERT_TOP,	"CheelloIconOfSinBackgroundForehead");
+			SpawnPiece(PIECEPOS_HORZ_RIGHT,	PIECEPOS_VERT_TOP,	"CheelloIconOfSinBackgroundHorns");
+
+			Destroy();
+		}
+	}
+
+	override void Tick(void)
+	{
+		Super.Tick();
+		bInvisible = !cheello_iconofsinvoxel;
+		ModPosForDebug();
+	}
+
+	//===========================================================================
+	//
+	//
+	//
+	//===========================================================================
+
+	protected void SpawnPiece(double hOffset, double vOffset, class<CheelloIconOfSin> cls)
+	{
+		for (int i = 1; i <= 2; i++)
+		{
+			let mo = Actor.Spawn(cls, Pos, NO_REPLACE);
+			if (mo)
+			{
+				Vector3 sPos = (-cos(Angle) * hOffset, -sin(Angle) * hOffset, vOffset);
+				mo.Angle = Angle;
+				mo.WorldOffset = sPos;
+
+				CheelloIconOfSin(mo).savedWorldOffset = mo.WorldOffset;
+				CheelloIconOfSin(mo).debugWorldOffset =
+				(
+					mo.WorldOffset.X + cos(mo.Angle + 90.) * (192. * i),
+					mo.WorldOffset.Y + sin(mo.Angle + 90.) * (192. * i),
+					mo.WorldOffset.Z
+				);
+
+				StateLabel stl;
+
+				switch(i)
+				{
+				case 1:
+					stl = 'Spawn';
+					break;
+				case 2:
+					stl = 'SpawnB';
+					break;
+				default:
+					break;
+				}
+
+				State st = mo.ResolveState(stl);
+				if (st)
+					mo.SetState(st);
+				else
+					mo.Destroy();
+			}
+		}
+	}
+
+	//===========================================================================
+	//
+	//
+	//
+	//===========================================================================
+
+	protected void ModPosForDebug(void)
+	{
+		WorldOffset = !cheello_icondebug ? savedWorldOffset : debugWorldOffset;
+
+		// haxxxxxxx
+		if (self is "CheelloIconOfSinBackgroundHorns" || self is "CheelloIconOfSinBackgroundForehead")
+		{
+			Vector3 backgroundOffset =
+			(
+				cos(Angle + 90.) * -3.,
+				sin(Angle + 90.) * -3.,
+				0.
+			);
+
+			WorldOffset += backgroundOffset;
+		}
+	}
+}
+
+//===========================================================================
+//
+//
+//
+//===========================================================================
+
+class CheelloIconOfSinLeftHorn : CheelloIconOfSin
+{
+	States
+	{
+	Spawn:
+		ZFA1 A -1;
+		Stop;
+	SpawnB:
+		ZFA1 B -1;
+		Stop;
+	}
+}
+
+//===========================================================================
+//
+//
+//
+//===========================================================================
+
+class CheelloIconOfSinForehead : CheelloIconOfSin
+{
+	States
+	{
+	Spawn:
+		ZFA3 A -1;
+		Stop;
+	/*
+	SpawnB:
+		ZFA3 B -1;
+		Stop;
+	*/
+	}
+}
+
+//===========================================================================
+//
+//
+//
+//===========================================================================
+
+class CheelloIconOfSinRightHorn : CheelloIconOfSin
+{
+	States
+	{
+	Spawn:
+		ZFA2 A -1;
+		Stop;
+	SpawnB:
+		ZFA2 B -1;
+		Stop;
+	}
+}
+
+//===========================================================================
+//
+//
+//
+//===========================================================================
+
+class CheelloIconOfSinLeftPanelMid : CheelloIconOfSin
+{
+	States
+	{
+	Spawn:
+		ZFA8 A -1;
+		Stop;
+	SpawnB:
+		ZFA8 B -1;
+		Stop;
+	}
+}
+
+//===========================================================================
+//
+//
+//
+//===========================================================================
+
+class CheelloIconOfSinFace : CheelloIconOfSin
+{
+	States
+	{
+	Spawn:
+		ZFA4 A -1;
+		Stop;
+	/*
+	SpawnB:
+		ZFA4 B -1;
+		Stop;
+	*/
+	}
+}
+
+//===========================================================================
+//
+//
+//
+//===========================================================================
+
+class CheelloIconOfSinRightPanelMid : CheelloIconOfSin
+{
+	States
+	{
+	Spawn:
+		ZFA6 A -1;
+		Stop;
+	SpawnB:
+		ZFA6 B -1;
+		Stop;
+	}
+}
+
+//===========================================================================
+//
+//
+//
+//===========================================================================
+
+class CheelloIconOfSinLeftPanelBottom : CheelloIconOfSin
+{
+	States
+	{
+	Spawn:
+		ZFA9 A -1;
+		Stop;
+	SpawnB:
+		ZFA9 B -1;
+		Stop;
+	}
+}
+
+//===========================================================================
+//
+//
+//
+//===========================================================================
+
+class CheelloIconOfSinJaw : CheelloIconOfSin
+{
+	States
+	{
+	Spawn:
+		ZFA5 A -1;
+		Stop;
+	SpawnB:
+		ZFA5 B -1;
+		Stop;
+	}
+}
+
+//===========================================================================
+//
+//
+//
+//===========================================================================
+
+class CheelloIconOfSinRightPanelBottom : CheelloIconOfSin
+{
+	States
+	{
+	Spawn:
+		ZFA7 A -1;
+		Stop;
+	SpawnB:
+		ZFA7 B -1;
+		Stop;
+	}
+}
+
+//===========================================================================
+//
+//
+//
+//===========================================================================
+
+class CheelloIconOfSinBackgroundHorns : CheelloIconOfSin
+{
+	States
+	{
+	Spawn:
+		ZF10 A -1;
+		Stop;
+	}
+}
+
+//===========================================================================
+//
+//
+//
+//===========================================================================
+
+class CheelloIconOfSinBackgroundForehead : CheelloIconOfSin
+{
+	States
+	{
+	Spawn:
+		ZF11 A -1;
+		Stop;
+	}
+}

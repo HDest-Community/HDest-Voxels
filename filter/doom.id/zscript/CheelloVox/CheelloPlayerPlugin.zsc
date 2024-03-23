@@ -1,0 +1,34 @@
+//===========================================================================
+//
+// CHEELLO VOXEL DOOM
+//
+// ZScript code: Copyright (C) 2022 - 2023 Nash Muhandes
+//
+// License: MIT
+//
+//===========================================================================
+
+//===========================================================================
+//
+// CheelloPlayerPlugin
+//
+//===========================================================================
+
+class CheelloPlayerPlugin : CheelloActorPlugin
+{
+	override void DoEffect(void)
+	{
+		if (!Owner)
+			return;
+
+		let pmo = PlayerPawn(Owner);
+		if (!pmo)
+			return;
+
+		if (pmo.CountInv("PowerInvisibility") && pmo.GetRenderStyle() != STYLE_Shadow)
+		{
+			// This is the only RenderStyle that is the least glitchiest with voxels.
+			pmo.A_SetRenderStyle(0.5, STYLE_Shadow);
+		}
+	}
+}

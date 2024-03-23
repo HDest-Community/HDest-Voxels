@@ -1,0 +1,42 @@
+//===========================================================================
+//
+// CHEELLO VOXEL DOOM
+//
+// ZScript code: Copyright (C) 2022 - 2023 Nash Muhandes
+//
+// License: MIT
+//
+//===========================================================================
+
+//===========================================================================
+//
+// CheelloRotateToCameraPlugin
+// Makes an actor always face the currently-viewed camera
+//
+//===========================================================================
+
+class CheelloRotateToCameraPlugin : CheelloActorPlugin
+{
+	override void DoEffect(void)
+	{
+		Super.DoEffect();
+
+		if (!Owner)
+			return;
+
+		// TO DO: remove this hack when angle-fixing maphacks get implemented
+		if (Owner is "EvilEye" && !CheelloVoxStatics.IsSigil())
+			return;
+
+		Actor cam = players[consoleplayer].camera;
+		if (cam && cam.CheckLocalView())
+		{
+			// Do not use A_Face, it glitches out when the player picks up the invisibility sphere. - Nash
+			double a, p;
+			Vector3 p2 = (cam && cam.player) ? cam.Vec3Offset(0, 0, cam.player.viewheight) : cam.Vec3Offset(0, 0, cam.CameraHeight);
+			[a, p] = CheelloVoxStatics.AnglesTo(Owner.Pos, p2);
+			Owner.A_SetAngle(a, SPF_INTERPOLATE);
+			Owner.A_SetPitch(p, SPF_INTERPOLATE);
+		}
+	}
+}

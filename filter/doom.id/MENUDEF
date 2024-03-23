@@ -1,0 +1,31 @@
+AddOptionMenu "OptionsMenu"
+{
+	StaticText "VOXEL DOOM v2.1"
+	Submenu "$OPTMNU_VOXELDOOMOPTS", "VoxelDoomOptionMenu"
+	StaticText ""
+}
+
+AddOptionMenu "OptionsMenuSimple"
+{
+	StaticText "VOXEL DOOM v2.1"
+	Submenu "$OPTMNU_VOXELDOOMOPTS", "VoxelDoomOptionMenu"
+	StaticText ""
+}
+
+OptionMenu "VoxelDoomOptionMenu"
+{
+	Class "CheelloOptionMenu"
+	Title "$OPTMNU_VOXELDOOMOPTS"
+	CheelloOption "$VOXELDOOMMNU_SPINITEMS",	"$VOXELDOOMMNU_SPINITEMS_TOOLTIP",	"cheello_spinningpickups",			"SpinningPickupOptions"
+	CheelloOption "$VOXELDOOMMNU_SMOOTHROT",	"$VOXELDOOMMNU_SMOOTHROT_TOOLTIP",	"cheello_smoothmonsterrotation",	"OnOff"
+	CheelloOption "$VOXELDOOMMNU_MPTT",			"$VOXELDOOMMNU_MPTT_TOOLTIP",		"cheello_monsterpitchtotarget",		"OnOff"
+	CheelloOption "$VOXELDOOMMNU_FACEKILLER",	"$VOXELDOOMMNU_FACEKILLER_TOOLTIP",	"cheello_monsterfaceskiller",		"OnOff"
+	CheelloOption "$VOXELDOOMMNU_PRECACHE",		"$VOXELDOOMMNU_PRECACHE_TOOLTIP",	"cheello_noprecache",				"OffOn"
+}
+
+OptionValue "SpinningPickupOptions"
+{
+	0, "$OPTVAL_OFF"
+	1, "$OPTVAL_VOXELDOOM_SPINALL"
+	2, "$OPTVAL_VOXELDOOM_SPIN_NODROPPED"
+}

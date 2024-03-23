@@ -1,0 +1,240 @@
+//===========================================================================
+//
+// CHEELLO VOXEL DOOM
+//
+// ZScript code: Copyright (C) 2022 - 2023 Nash Muhandes
+//
+// License: MIT
+//
+//===========================================================================
+
+//===========================================================================
+//
+// Custom Widgets for Voxel Doom
+// Adds tooltips to widgets
+//
+// Some redundant duplicates here but whatever; menus are painful to work
+// with in general anyway. >:(
+//
+//===========================================================================
+
+class OptionMenuItemCheelloOption : OptionMenuItemOption
+{
+	String mTooltip;
+
+	OptionMenuItemCheelloOption Init(String label, String tooltip, Name command, Name values, CVar graycheck = null, int center = 0)
+	{
+		mTooltip = tooltip;
+		Super.Init(label, command, values, graycheck, center);
+		return self;
+	}
+}
+
+class OptionMenuItemCheelloSlider : OptionMenuItemSlider
+{
+	String mTooltip;
+
+	OptionMenuItemCheelloSlider Init(String label, String tooltip, Name command, double min, double max, double step, int showval = 1, CVar graycheck = NULL)
+	{
+		mTooltip = tooltip;
+		Super.Init(label, command, min, max, step, showval, graycheck);
+		return self;
+	}
+}
+
+class OptionMenuItemCheelloControl : OptionMenuItemControl
+{
+	String mTooltip;
+
+	OptionMenuItemCheelloControl Init(String label, String tooltip, Name command)
+	{
+		mTooltip = tooltip;
+		Super.Init(label, command);
+		return self;
+	}
+}
+
+/*
+// This doesn't work because mUh eXpLoiTs lmaaaaoooo
+class OptionMenuItemCheelloSafeCommand : OptionMenuItemSafeCommand
+{
+	String mTooltip;
+
+	OptionMenuItemCheelloSafeCommand Init(String label, String tooltip, Name command, String prompt = "")
+	{
+		mTooltip = tooltip;
+		Super.Init(label, command, prompt);
+		return self;
+	}
+}
+*/
+
+//===========================================================================
+//
+// CheelloOptionMenu
+//
+//===========================================================================
+
+class CheelloOptionMenu : OptionMenu
+{
+	const START_TIME = 85;
+	const END_TIME = 120;
+	const SCROLL_SPEED = 6;
+	const MAX_ASPECT = 16 / 9.;
+
+	int mDefaultPosition;
+	String mTooltip;
+
+	private int startTimer;
+	private int endTimer;
+	private int scrollTimer;
+	private int prevSelected;
+
+	private int textBoxWidth;
+	private int textBoxStart;
+	private int fHeight;
+	private int padding;
+	private int xOfs;
+	private int txtLength;
+
+	private Font optFnt;
+
+	//===========================================================================
+	//
+	//
+	//
+	//===========================================================================
+
+	override void Init(Menu parent, OptionMenuDescriptor desc)
+	{
+		Super.Init(parent, desc);
+
+		optFnt = OptionFont();
+
+		mDefaultPosition = mDesc.mPosition;
+		prevSelected = -1;
+	}
+
+	override void Ticker(void)
+	{
+		Super.Ticker();
+
+		mToolTip = "";
+
+		if (mDesc.mSelectedItem >= 0)
+		{
+			let item = mDesc.mItems[mDesc.mSelectedItem];
+			if (item is "OptionMenuItemCheelloOption")
+			{
+				mToolTip = StringTable.Localize(OptionMenuItemCheelloOption(item).mTooltip);
+			}
+			else if (item is "OptionMenuItemCheelloSlider")
+			{
+				mToolTip = StringTable.Localize(OptionMenuItemCheelloSlider(item).mTooltip);
+			}
+			else if (item is "OptionMenuItemCheelloControl")
+			{
+				mToolTip = StringTable.Localize(OptionMenuItemCheelloControl(item).mTooltip);
+			}
+		}
+
+		fHeight = optFnt.GetHeight() * CleanYFac_1;
+		padding = fHeight << 1;
+
+		if (prevSelected != mDesc.mSelectedItem)
+		{
+			startTimer = START_TIME;
+			endTimer = 0;
+			scrollTimer = 0;
+		}
+
+		if (mToolTip.Length() > 0)
+		{
+			int realWidth = Screen.GetWidth();
+			int height = Screen.GetHeight();
+
+			int width = realWidth;
+			if (width / height > MAX_ASPECT)
+			{
+				width = int(height * MAX_ASPECT);
+			}
+
+			textBoxWidth = int(width * 3 / 4.);
+			textBoxStart = width / 8 + (realWidth - width) / 2;
+
+			txtLength = optFnt.StringWidth(mToolTip) * CleanXFac_1;
+			xOfs = (realWidth - txtLength) / 2;
+			if (txtLength > textBoxWidth)
+			{
+				xOfs = textBoxStart;
+				if (startTimer <= 0)
+				{
+					xOfs -= SCROLL_SPEED * (endTimer <= 0 ? scrollTimer++ : scrollTimer);
+
+					int end = xOfs + txtLength;
+					if (endTimer > 0 || end < textBoxStart + textBoxWidth)
+					{
+						xOfs += (textBoxStart + textBoxWidth - end);
+						if (endTimer <= 0)
+						{
+							endTimer = END_TIME;
+						}
+					}
+				}
+
+				if (endTimer <= 0)
+				{
+					textBoxWidth -= optFnt.StringWidth("...") * CleanXFac_1;
+				}
+			}
+		}
+
+		if (startTimer > 0)
+		{
+			startTimer--;
+		}
+
+		if (endTimer > 0)
+		{
+			endTimer--;
+			if (endTimer <= 0)
+			{
+				scrollTimer = 0;
+				startTimer = START_TIME;
+			}
+		}
+	}
+
+	override void Drawer(void)
+	{
+		int cx, cy, cw, ch;
+		[cx, cy, cw, ch] = Screen.GetClipRect();
+		Screen.SetClipRect(textBoxStart, padding, textBoxWidth, fHeight);
+
+		Screen.DrawText(optFnt, OptionMenuSettings.mFontColorValue,
+						xOfs, padding,
+						mToolTip,
+						DTA_CleanNoMove_1, true);
+
+		Screen.SetClipRect(cx, cy, cw, ch);
+
+		if (mToolTip.Length() > 0 && txtLength > textBoxWidth && endTimer <= 0 && mDesc.mSelectedItem != -1)
+		{
+			Screen.DrawText(optFnt, OptionMenuSettings.mFontColorValue,
+							textBoxStart + textBoxWidth, padding,
+							"...",
+							DTA_CleanNoMove_1, true);
+		}
+
+		int shift = -padding / CleanYFac_1;
+		if (shift > mDefaultPosition)
+			shift = mDefaultPosition;
+
+		mDesc.mPosition = shift;
+		prevSelected = mDesc.mSelectedItem;
+
+		Super.Drawer();
+
+		mDesc.mPosition = mDefaultPosition;
+	}
+}

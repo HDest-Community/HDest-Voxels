@@ -1,0 +1,401 @@
+//===========================================================================
+//
+// CHEELLO VOXEL DOOM
+//
+// ZScript code: Copyright (C) 2022 - 2023 Nash Muhandes
+//
+// License: MIT
+//
+//===========================================================================
+
+//===========================================================================
+//
+// CheelloVoxDoom2Handler
+// General helper functionality for Doom 2
+// The decision to make this a separate file was deliberate, to keep
+// the Doom 1 event handler file clean.
+// Do not merge this into the Doom 1 handler.
+//
+//===========================================================================
+
+class CheelloVoxDoom2Handler : EventHandler
+{
+	override void WorldLoaded(WorldEvent e)
+	{
+		SpawnIconOfSinVoxels();
+
+		if (!cheello_noprecache)
+			PrecacheVoxelsDoom2();
+
+		ApplyRomeroHack();
+	}
+
+	//===========================================================================
+	//
+	//
+	//
+	//===========================================================================
+
+	void SpawnIconOfSinVoxels(void)
+	{
+		for (int i = 0; i < Level.Lines.Size(); i++)
+		{
+			let ln = Level.Lines[i];
+			if (ln)
+			{
+				for (int j = ln.front; j <= ln.back; j++)
+				{
+					let side = ln.sidedef[j];
+					if (side)
+					{
+						for (int k = side.top; k <= side.bottom; k++)
+						{
+							String texName = TexMan.GetName(side.GetTexture(k));
+
+							// just look for the lower jaw and anchor the other pieces off that!
+							if (texName == "ZZZFACE5")
+							{
+								let sPos = ((ln.v1.p + ln.v2.p) / 2, 0);
+								let wallAngle = atan2(ln.delta.Y, ln.delta.X) + 180.;
+								let mo = Actor.Spawn("CheelloIconOfSin", sPos, NO_REPLACE);
+								if (mo)
+								{
+									mo.Angle = wallAngle;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//===========================================================================
+	//
+	//
+	//
+	//===========================================================================
+
+	protected void PrecacheVoxelsDoom2(void)
+	{
+		if (CheelloVoxHandler.FindActor('SuperShotgun'))
+			CheelloVoxHandler.DoPrecacheVoxel('sgn2', 'a');
+
+		if (CheelloVoxHandler.FindActor('Megasphere'))
+		{
+			CheelloVoxHandler.DoPrecacheVoxel('mega', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('mega', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('mega', 'c');
+			CheelloVoxHandler.DoPrecacheVoxel('mega', 'd');
+		}
+
+		if (CheelloVoxHandler.FindActor('Arachnotron') || CheelloVoxHandler.FindActor('BossBrain'))
+		{
+			CheelloVoxHandler.DoPrecacheVoxel('bspi', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('bspi', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('bspi', 'c');
+			CheelloVoxHandler.DoPrecacheVoxel('bspi', 'd');
+			CheelloVoxHandler.DoPrecacheVoxel('bspi', 'e');
+			CheelloVoxHandler.DoPrecacheVoxel('bspi', 'f');
+			CheelloVoxHandler.DoPrecacheVoxel('bspi', 'g');
+			CheelloVoxHandler.DoPrecacheVoxel('bspi', 'h');
+			CheelloVoxHandler.DoPrecacheVoxel('bspi', 'i');
+			CheelloVoxHandler.DoPrecacheVoxel('bspi', 'j');
+			CheelloVoxHandler.DoPrecacheVoxel('bspi', 'k');
+			CheelloVoxHandler.DoPrecacheVoxel('bspi', 'l');
+			CheelloVoxHandler.DoPrecacheVoxel('bspi', 'm');
+			CheelloVoxHandler.DoPrecacheVoxel('bspi', 'n');
+			CheelloVoxHandler.DoPrecacheVoxel('bspi', 'o');
+			CheelloVoxHandler.DoPrecacheVoxel('bspi', 'p');
+			CheelloVoxHandler.DoPrecacheVoxel('apls', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('apls', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('apbx', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('apbx', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('apbx', 'c');
+			CheelloVoxHandler.DoPrecacheVoxel('apbx', 'd');
+			CheelloVoxHandler.DoPrecacheVoxel('apbx', 'e');
+		}
+
+		if (CheelloVoxHandler.FindActor('Archvile') || CheelloVoxHandler.FindActor('BossBrain'))
+		{
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'c');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'd');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'e');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'f');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'g');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'h');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'i');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'j');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'k');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'l');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'm');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'n');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'o');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'p');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'q');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'r');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 's');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 't');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'u');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'v');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'w');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'x');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'y');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', 'z');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', '[');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', '\');
+			CheelloVoxHandler.DoPrecacheVoxel('vile', ']');
+		}
+
+		if (CheelloVoxHandler.FindActor('ChaingunGuy'))
+		{
+			CheelloVoxHandler.DoPrecacheVoxel('cpos', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('cpos', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('cpos', 'c');
+			CheelloVoxHandler.DoPrecacheVoxel('cpos', 'd');
+			CheelloVoxHandler.DoPrecacheVoxel('cpos', 'e');
+			CheelloVoxHandler.DoPrecacheVoxel('cpos', 'f');
+			CheelloVoxHandler.DoPrecacheVoxel('cpos', 'g');
+			CheelloVoxHandler.DoPrecacheVoxel('cpos', 'h');
+			CheelloVoxHandler.DoPrecacheVoxel('cpos', 'i');
+			CheelloVoxHandler.DoPrecacheVoxel('cpos', 'j');
+			CheelloVoxHandler.DoPrecacheVoxel('cpos', 'k');
+			CheelloVoxHandler.DoPrecacheVoxel('cpos', 'l');
+			CheelloVoxHandler.DoPrecacheVoxel('cpos', 'm');
+			CheelloVoxHandler.DoPrecacheVoxel('cpos', 'n');
+		}
+
+		if (CheelloVoxHandler.FindActor('HellKnight') || CheelloVoxHandler.FindActor('BossBrain'))
+		{
+			CheelloVoxHandler.DoPrecacheVoxel('bos2', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('bos2', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('bos2', 'c');
+			CheelloVoxHandler.DoPrecacheVoxel('bos2', 'd');
+			CheelloVoxHandler.DoPrecacheVoxel('bos2', 'e');
+			CheelloVoxHandler.DoPrecacheVoxel('bos2', 'f');
+			CheelloVoxHandler.DoPrecacheVoxel('bos2', 'g');
+			CheelloVoxHandler.DoPrecacheVoxel('bos2', 'h');
+			CheelloVoxHandler.DoPrecacheVoxel('bos2', 'i');
+			CheelloVoxHandler.DoPrecacheVoxel('bos2', 'j');
+			CheelloVoxHandler.DoPrecacheVoxel('bos2', 'k');
+			CheelloVoxHandler.DoPrecacheVoxel('bos2', 'l');
+			CheelloVoxHandler.DoPrecacheVoxel('bos2', 'm');
+			CheelloVoxHandler.DoPrecacheVoxel('bos2', 'n');
+			CheelloVoxHandler.DoPrecacheVoxel('bos2', 'o');
+		}
+
+		if (CheelloVoxHandler.FindActor('Fatso') || CheelloVoxHandler.FindActor('BossBrain'))
+		{
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 'c');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 'd');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 'e');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 'f');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 'g');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 'h');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 'i');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 'j');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 'k');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 'l');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 'm');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 'n');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 'o');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 'p');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 'q');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 'r');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 's');
+			CheelloVoxHandler.DoPrecacheVoxel('fatt', 't');
+			CheelloVoxHandler.DoPrecacheVoxel('manf', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('manf', 'b');
+		}
+
+		if (CheelloVoxHandler.FindActor('PainElemental') || CheelloVoxHandler.FindActor('BossBrain'))
+		{
+			CheelloVoxHandler.DoPrecacheVoxel('pain', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('pain', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('pain', 'c');
+			CheelloVoxHandler.DoPrecacheVoxel('pain', 'd');
+			CheelloVoxHandler.DoPrecacheVoxel('pain', 'e');
+			CheelloVoxHandler.DoPrecacheVoxel('pain', 'f');
+			CheelloVoxHandler.DoPrecacheVoxel('pain', 'g');
+			CheelloVoxHandler.DoPrecacheVoxel('pain', 'h');
+			CheelloVoxHandler.DoPrecacheVoxel('pain', 'i');
+			CheelloVoxHandler.DoPrecacheVoxel('pain', 'j');
+			CheelloVoxHandler.DoPrecacheVoxel('pain', 'k');
+			CheelloVoxHandler.DoPrecacheVoxel('pain', 'l');
+			CheelloVoxHandler.DoPrecacheVoxel('pain', 'm');
+		}
+
+		if (CheelloVoxHandler.FindActor('Revenant') || CheelloVoxHandler.FindActor('BossBrain'))
+		{
+			CheelloVoxHandler.DoPrecacheVoxel('skel', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('skel', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('skel', 'c');
+			CheelloVoxHandler.DoPrecacheVoxel('skel', 'd');
+			CheelloVoxHandler.DoPrecacheVoxel('skel', 'e');
+			CheelloVoxHandler.DoPrecacheVoxel('skel', 'f');
+			CheelloVoxHandler.DoPrecacheVoxel('skel', 'g');
+			CheelloVoxHandler.DoPrecacheVoxel('skel', 'h');
+			CheelloVoxHandler.DoPrecacheVoxel('skel', 'i');
+			CheelloVoxHandler.DoPrecacheVoxel('skel', 'j');
+			CheelloVoxHandler.DoPrecacheVoxel('skel', 'k');
+			CheelloVoxHandler.DoPrecacheVoxel('skel', 'l');
+			CheelloVoxHandler.DoPrecacheVoxel('skel', 'm');
+			CheelloVoxHandler.DoPrecacheVoxel('skel', 'n');
+			CheelloVoxHandler.DoPrecacheVoxel('skel', 'o');
+			CheelloVoxHandler.DoPrecacheVoxel('skel', 'p');
+			CheelloVoxHandler.DoPrecacheVoxel('skel', 'q');
+			CheelloVoxHandler.DoPrecacheVoxel('fatb', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('fatb', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('fbxp', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('fbxp', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('fbxp', 'c');
+		}
+
+		if (CheelloVoxHandler.FindActor('WolfensteinSS'))
+		{
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'c');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'd');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'e');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'f');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'g');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'h');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'i');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'j');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'k');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'l');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'm');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'n');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'o');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'p');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'q');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'r');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 's');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 't');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'u');
+			CheelloVoxHandler.DoPrecacheVoxel('sswv', 'v');
+		}
+
+		if (CheelloVoxHandler.FindActor('CommanderKeen'))
+		{
+			CheelloVoxHandler.DoPrecacheVoxel('keen', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('keen', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('keen', 'c');
+			CheelloVoxHandler.DoPrecacheVoxel('keen', 'd');
+			CheelloVoxHandler.DoPrecacheVoxel('keen', 'e');
+			CheelloVoxHandler.DoPrecacheVoxel('keen', 'f');
+			CheelloVoxHandler.DoPrecacheVoxel('keen', 'g');
+			CheelloVoxHandler.DoPrecacheVoxel('keen', 'h');
+			CheelloVoxHandler.DoPrecacheVoxel('keen', 'i');
+			CheelloVoxHandler.DoPrecacheVoxel('keen', 'j');
+			CheelloVoxHandler.DoPrecacheVoxel('keen', 'k');
+			CheelloVoxHandler.DoPrecacheVoxel('keen', 'l');
+			CheelloVoxHandler.DoPrecacheVoxel('keen', 'm');
+		}
+
+		if (CheelloVoxHandler.FindActor('BossBrain'))
+		{
+			CheelloVoxHandler.DoPrecacheVoxel('bosf', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('bosf', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('bosf', 'c');
+			CheelloVoxHandler.DoPrecacheVoxel('bosf', 'd');
+			CheelloVoxHandler.DoPrecacheVoxel('bbrn', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('bbrn', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('zfa1', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('zfa2', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('zfa3', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('zfa4', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('zfa5', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('zfa6', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('zfa7', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('zfa8', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('zfa9', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('zfa1', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('zfa2', 'b');
+			//CheelloVoxHandler.DoPrecacheVoxel('zfa3', 'b');
+			//CheelloVoxHandler.DoPrecacheVoxel('zfa4', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('zfa5', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('zfa6', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('zfa7', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('zfa8', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('zfa9', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('zf10', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('zf11', 'a');
+		}
+
+		if (CheelloVoxHandler.FindActor('ColonGibs'))
+			CheelloVoxHandler.DoPrecacheVoxel('pob1', 'a');
+
+		if (CheelloVoxHandler.FindActor('SmallBloodPool'))
+			CheelloVoxHandler.DoPrecacheVoxel('pob2', 'a');
+
+		if (CheelloVoxHandler.FindActor('BrainStem'))
+			CheelloVoxHandler.DoPrecacheVoxel('brs1', 'a');
+
+		if (CheelloVoxHandler.FindActor('HangNoGuts'))
+			CheelloVoxHandler.DoPrecacheVoxel('hdb1', 'a');
+
+		if (CheelloVoxHandler.FindActor('HangBNoBrain'))
+			CheelloVoxHandler.DoPrecacheVoxel('hdb2', 'a');
+
+		if (CheelloVoxHandler.FindActor('HangTLookingDown'))
+			CheelloVoxHandler.DoPrecacheVoxel('hdb3', 'a');
+
+		if (CheelloVoxHandler.FindActor('HangTSkull'))
+			CheelloVoxHandler.DoPrecacheVoxel('hdb4', 'a');
+
+		if (CheelloVoxHandler.FindActor('HangTLookingUp'))
+			CheelloVoxHandler.DoPrecacheVoxel('hdb5', 'a');
+
+		if (CheelloVoxHandler.FindActor('HangTNoBrain'))
+			CheelloVoxHandler.DoPrecacheVoxel('hdb6', 'a');
+
+		if (CheelloVoxHandler.FindActor('TechLamp'))
+		{
+			CheelloVoxHandler.DoPrecacheVoxel('tlmp', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('tlmp', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('tlmp', 'c');
+			CheelloVoxHandler.DoPrecacheVoxel('tlmp', 'd');
+		}
+
+		if (CheelloVoxHandler.FindActor('TechLamp2'))
+		{
+			CheelloVoxHandler.DoPrecacheVoxel('tlp2', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('tlp2', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('tlp2', 'c');
+			CheelloVoxHandler.DoPrecacheVoxel('tlp2', 'd');
+		}
+
+		if (CheelloVoxHandler.FindActor('BurningBarrel'))
+		{
+			CheelloVoxHandler.DoPrecacheVoxel('fcan', 'a');
+			CheelloVoxHandler.DoPrecacheVoxel('fcan', 'b');
+			CheelloVoxHandler.DoPrecacheVoxel('fcan', 'c');
+		}
+	}
+
+	//===========================================================================
+	//
+	//
+	//
+	//===========================================================================
+
+	void ApplyRomeroHack(void)
+	{
+		// delete this when maphacks get done properly
+		ThinkerIterator it = ThinkerIterator.Create('BossBrain');
+		Actor mo;
+		while (mo = Actor(it.Next()))
+		{
+			if (players[0].mo)
+				mo.Angle = mo.AngleTo(players[0].mo);
+
+			break;
+		}
+	}
+}

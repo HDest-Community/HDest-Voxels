@@ -1,0 +1,737 @@
+//Auto5 slug scoped
+Model HDAuto5{
+	Model 0 "models/Peppergrinder/Weapons/auto5/Auto5-0-AUSPA0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/auto5/Auto5-0-AUSPA0.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex AUSP A 0 0
+}
+//Auto5 slug
+Model HDAuto5{
+	Model 0 "models/Peppergrinder/Weapons/auto5/Auto5-0-AUTPA0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/auto5/Auto5-0-AUTPA0.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex AUTP A 0 0
+}
+//P90 Loaded
+Model HDBreakerp90{
+	Model 0 "models/Peppergrinder/Weapons/p90/P90-0-PNTKA0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/p90/P90-0-PNTKA0.png"
+	AngleOffset 90
+	Scale 12 12 12
+	FrameIndex PNTK A 0 0
+}
+//P90 unloaded
+Model HDBreakerp90{
+	Model 0 "models/Peppergrinder/Weapons/p90/P90-0-PNTKB0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/p90/P90-0-PNTKB0.png"
+	AngleOffset 90
+	Scale 12 12 12
+	FrameIndex PNTK B 0 0
+}
+//P90 xbarrel loaded
+Model HDBreakerp90{
+	Model 0 "models/Peppergrinder/Weapons/p90/P90-PNTKC0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/p90/P90-PNTKC0.png"
+	AngleOffset 90
+	Scale 12 12 12
+	FrameIndex PNTK C 0 0
+}
+//P90 xbarrel unloaded 
+Model HDBreakerp90{
+	Model 0 "models/Peppergrinder/Weapons/p90/P90-PNTKD0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/p90/P90-PNTKD0.png"
+	AngleOffset 90
+	Scale 12 12 12
+	FrameIndex PNTK D 0 0
+}
+//P90 exgrip loaded 
+Model HDBreakerp90{
+	Model 0 "models/Peppergrinder/Weapons/p90/P90-PNTKE0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/p90/P90-PNTKE0.png"
+	AngleOffset 90
+	Scale 12 12 12
+	FrameIndex PNTK E 0 0
+}
+//P90 exgrip unloaded 
+Model HDBreakerp90{
+	Model 0 "models/Peppergrinder/Weapons/p90/P90-PNTKF0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/p90/P90-PNTKF0.png"
+	AngleOffset 90
+	Scale 12 12 12
+	FrameIndex PNTK F 0 0
+}
+//P90 mag
+Model HDNDMBigMag{
+	Model 0 "models/Peppergrinder/Weapons/p90/P90-0-PNMGA0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/p90/P90-0-PNMGA0.png"
+	AngleOffset 90
+	Scale 12 12 12
+	FrameIndex PNMG B 0 0
+}
+//P90 mag unloaded
+Model HDNDMBigEmptyMag{
+	Model 0 "models/Peppergrinder/Weapons/p90/P90-0-PNMGB0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/p90/P90-0-PNMGB0.png"
+	AngleOffset 90
+	Scale 12 12 12
+	FrameIndex PNDM A 0 0
+}
+
+//Auroch
+Model HDAurochs{
+	Model 0 "models/Peppergrinder/Weapons/aurochs/Aurochs-AURPA0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/aurochs/Aurochs-AURPA0.png"
+	AngleOffset 270
+	Scale 15 15 15
+	FrameIndex AURP A 0 0
+}
+
+
+
+/*
+											BOX CANNON START
+
+BoxCannon frame to letter reference
+0123456789	10	11	12 13	14	15 16	17 18
+ABCDEFGHIJ	K	L	M	N	O	P	Q	R	S
+*/
+
+//BoxCannon
+Model HDBoxCannon{
+	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt0brt0stk0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BoxCannon/mgt0brt0stk0.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex MPS1 A 0 0
+}
+//BoxCannon w/stock
+Model HDBoxCannon{
+	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt0brt0stk1.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BoxCannon/mgt0brt0stk1.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex MPS1 Y 0 0
+}
+//BoxCannon silenced
+Model HDBoxCannon{
+	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt0brt2stk0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BoxCannon/mgt0brt2stk0.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex MPS1 M 0 0
+}
+//BoxCannon  xbarrel
+Model HDBoxCannon{
+	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt0brt1stk0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BoxCannon/mgt0brt1stk0.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex MPS1 D 0 0
+}
+//BoxCannon stock silencer
+Model HDBoxCannon{
+	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt0brt2stk1.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BoxCannon/mgt0brt2stk1.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex MPS1 N 0 0
+}
+//BoxCannon xmag
+Model HDBoxCannon{
+	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt1brt0stk0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BoxCannon/mgt1brt0stk0.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex MPS1 C 0 0
+}
+//BoxCannon xmag stock
+Model HDBoxCannon{
+	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt1brt0stk1.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BoxCannon/mgt1brt0stk1.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex MPS1 E 0 0
+}
+//BoxCannon xmag xbarrel
+Model HDBoxCannon{
+	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt1brt1stk0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BoxCannon/mgt1brt1stk0.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex MPS1 G 0 0
+}
+//BoxCannon xmag silenced
+Model HDBoxCannon{
+	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt1brt2stk0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BoxCannon/mgt1brt2stk0.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex MPS1 O 0 0
+}
+//BoxCannon xmag stock silenced
+Model HDBoxCannon{
+	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt1brt2stk1.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BoxCannon/mgt1brt2stk1.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex MPS1 Q 0 0
+}
+//BoxCannon w/stock, ext barrel, ext mag
+Model HDBoxCannon{
+	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt1brt1stk1.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BoxCannon/mgt1brt1stk1.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex MPS1 H 0 0
+}
+//BoxCannon drum
+Model HDBoxCannon{
+	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt2brt0stk0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BoxCannon/mgt2brt0stk0.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex MPS1 I 0 0
+}
+//BoxCannon drum stock
+Model HDBoxCannon{
+	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt2brt0stk1.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BoxCannon/mgt2brt0stk1.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex MPS1 J 0 0
+}
+//BoxCannon drum xbarrel
+Model HDBoxCannon{
+	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt2brt1stk0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BoxCannon/mgt2brt1stk0.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex MPS1 K 0 0
+}
+//BoxCannon drum silenced
+Model HDBoxCannon{
+	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt2brt2stk0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BoxCannon/mgt2brt2stk0.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex MPS1 P 0 0
+}
+//BoxCannon drum stock silenced
+Model HDBoxCannon{
+	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt2brt2stk1.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BoxCannon/mgt2brt2stk1.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex MPS1 R 0 0
+}
+//BoxCannon drum stock xbarrel
+Model HDBoxCannon{
+	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt2brt1stk1.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BoxCannon/mgt2brt1stk1.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex MPS1 L 0 0
+}
+
+//										BOX CANNON END
+
+
+
+//BPX Loaded
+Model HDBPX{
+	Model 0 "models/Peppergrinder/Weapons/BPX/BPX-0-BPXPA0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BPX/BPX-0-BPXPA0.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex BPXP A 0 0
+}
+//BPX Unloaded
+Model HDBPX{
+	Model 0 "models/Peppergrinder/Weapons/BPX/BPX-0-BPXPB0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BPX/BPX-0-BPXPB0.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex BPXP B 0 0
+}
+//BPX scope loaded
+Model HDBPX{
+	Model 0 "models/Peppergrinder/Weapons/BPX/BPX-0-BPXSA0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BPX/BPX-0-BPXSA0.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex BPXS A 0 0
+}
+//BPX scope unloaded
+Model HDBPX{
+	Model 0 "models/Peppergrinder/Weapons/BPX/BPX-0-BPXSB0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BPX/BPX-0-BPXSB0.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex BPXS B 0 0
+}
+//BPX reflex loaded
+Model HDBPX{
+	Model 0 "models/Peppergrinder/Weapons/BPX/BPX-0-BPXZA0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BPX/BPX-0-BPXZA0.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex BPXZ A 0 0
+}
+//BPX reflex unloaded
+Model HDBPX{
+	Model 0 "models/Peppergrinder/Weapons/BPX/BPX-0-BPXZB0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BPX/BPX-0-BPXZB0.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex BPXZ B 0 0
+}
+//DMR loaded
+Model HDDMR{
+	Model 0 "models/Peppergrinder/Weapons/DMR/DMR-0-PMRPA0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/DMR/DMR-0-PMRPA0.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex PMRP A 0 0
+}
+//DMR unloaded
+Model HDDMR{
+	Model 0 "models/Peppergrinder/Weapons/DMR/DMR-0-PMRPB0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/DMR/DMR-0-PMRPB0.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex PMRP B 0 0
+}
+//Fulgur
+Model HDLaserMachinegun{
+	Model 0 "models/Peppergrinder/Weapons/Fulgur/Fulgur-0-LSMPA0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/Fulgur/Fulgur-0-LSMPA0.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex LSMP A 0 0
+}
+//Greely
+Model HDGreely{
+	Model 0 "models/Peppergrinder/Weapons/greely/greely-0-GSGPA0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/greely/greely-0-GSGPA0.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex GSGP A 0 0
+}
+//HLAR unloaded
+Model HDHLAR{
+	Model 0 "models/Peppergrinder/Weapons/hlar/HLAR-HLPIA.obj"
+	Skin 0 "models/Peppergrinder/Weapons/hlar/HLAR-HLPIA.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex HLPI A 0 0
+}
+//HLAR loaded
+Model HDHLAR{
+	Model 0 "models/Peppergrinder/Weapons/hlar/HLAR-HLPIB.obj"
+	Skin 0 "models/Peppergrinder/Weapons/hlar/HLAR-HLPIB.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex HLPI B 0 0
+}
+//The Box
+Model TheBoxThingy{
+	Model 0 "models/Peppergrinder/Items/thebox/thebox-0-AMCNA0.obj"
+	Skin 0 "models/Peppergrinder/Items/thebox/thebox-0-AMCNA0.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex AMCN A 0 0
+}
+
+//TROG loaded
+Model HDTROGRifle{
+	Model 0 "models/Peppergrinder/Weapons/trog/TRG-0-TRG1A0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/trog/TRG-0-TRG1A0.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex TRG1 A 0 0
+}
+//TROG unloaded
+Model HDTROGRifle{
+	Model 0 "models/Peppergrinder/Weapons/trog/TRG-0-TRG1B0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/trog/TRG-0-TRG1B0.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex TRG1 D 0 0
+}
+//TROG mag loaded
+Model HDTrogmag{
+	Model 0 "models/Peppergrinder/Weapons/trog/TRG-0-tmaga0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/trog/TRG-0-tmaga0.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex TMAG A 0 0
+}
+//TROG mag unloaded
+Model HDTrogmag{
+	Model 0 "models/Peppergrinder/Weapons/trog/TRG-0-tmagb0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/trog/TRG-0-tmagb0.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex TMAG C 0 0
+}
+//Scoped revolver
+Model HDScopedRevolver{
+	Model 0 "models/Peppergrinder/Weapons/ScopedRevolver/scopedrevolver.obj"
+	Skin 0 "models/Peppergrinder/Weapons/ScopedRevolver/scopedrevolver.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex SRVP A 0 0
+}
+//Lotus short
+Model HDLotus{
+	Model 0 "models/Peppergrinder/Weapons/Lotus/Lotus-0-RRVLA0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/Lotus/Lotus-0-RRVLA0.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex RRVL A 0 0
+}
+//Lotus short scoped
+Model HDLotus{
+	Model 0 "models/Peppergrinder/Weapons/Lotus/Lotus-0-RRVLB0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/Lotus/Lotus-0-RRVLB0.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex RRVL B 0 0
+}
+//Lotus
+Model HDLotus{
+	Model 0 "models/Peppergrinder/Weapons/Lotus/Lotus-0-RRVLC0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/Lotus/Lotus-0-RRVLC0.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex RRVL C 0 0
+}
+//Lotus scoped
+Model HDLotus{
+	Model 0 "models/Peppergrinder/Weapons/Lotus/Lotus-0-RRVLD0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/Lotus/Lotus-0-RRVLD0.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex RRVL D 0 0
+}
+//Lotus suppressor
+Model HDLotus{
+	Model 0 "models/Peppergrinder/Weapons/Lotus/Lotus-0-RRVLE0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/Lotus/Lotus-0-RRVLE0.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex RRVL E 0 0
+}
+//Lotus suppressed scoped
+Model HDLotus{
+	Model 0 "models/Peppergrinder/Weapons/Lotus/Lotus-0-RRVLF0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/Lotus/Lotus-0-RRVLF0.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex RRVL F 0 0
+}
+//Oddball
+Model HDOddball{
+	Model 0 "models/Peppergrinder/Weapons/oddball/oddball.obj"
+	Skin 0 "models/Peppergrinder/Weapons/oddball/oddball.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex ODPA A 0 0
+}
+//Otis
+Model HDOtisGun{
+	Model 0 "models/Peppergrinder/Weapons/otis/otis.obj"
+	Skin 0 "models/Peppergrinder/Weapons/otis/otis.png"
+	AngleOffset 270
+	Scale 8 8 8
+	FrameIndex OTIP A 0 0
+}
+//Mauler
+Model HDMauler{
+	Model 0 "models/Peppergrinder/Weapons/mauler/mauler.obj"
+	Skin 0 "models/Peppergrinder/Weapons/mauler/mauler.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex MLRP A 0 0
+}
+//Plasma Pistol
+Model HDPlasmaPistol{
+	Model 0 "models/Peppergrinder/Weapons/plasmapistol/plasmapistol.obj"
+	Skin 0 "models/Peppergrinder/Weapons/plasmapistol/plasmapistol.png"
+	AngleOffset 270
+	Scale 12 12 12
+	FrameIndex ZUSP A 0 0
+}
+//Ruby Maser
+Model RubyMaser{
+	Model 0 "models/Peppergrinder/Weapons/rubymaser/rubymaser.obj"
+	Skin 0 "models/Peppergrinder/Weapons/rubymaser/rubymaser.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex MASE Z 0 0
+}
+//Sawed Slayer
+Model SawedSlayer{
+	Model 0 "models/Peppergrinder/Weapons/sawedslayer/sawedslayer-0-SGSWA0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/sawedslayer/sawedslayer-0-SGSWA0.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex SGSW A 0 0
+}
+//Vera
+Model HDVera{
+	Model 0 "models/Peppergrinder/Weapons/vera/vera.obj"
+	Skin 0 "models/Peppergrinder/Weapons/vera/vera.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex VRAP A 0 0
+}
+//Wiseau Plasma Magnum charged
+Model HDWiseau{
+	Model 0 "models/Peppergrinder/Weapons/wiseau/wiseau-0-ENUFA0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/wiseau/wiseau-0-ENUFA0.png"
+	AngleOffset 270
+	Scale 9 9 9
+	FrameIndex ENUF A 0 0
+}
+//Wiseau Plasma Magnum uncharged
+Model HDWiseau{
+	Model 0 "models/Peppergrinder/Weapons/wiseau/wiseau-0-ENUFB0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/wiseau/wiseau-0-ENUFB0.png"
+	AngleOffset 270
+	Scale 9 9 9
+	FrameIndex ENUF B 0 0
+}
+//LISA plasma DMR charged
+Model HDLisa{
+	Model 0 "models/Peppergrinder/Weapons/lisa/wiseau-TOMPC0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/lisa/wiseau-TOMPC0.png"
+	AngleOffset 270
+	Scale 9 9 9
+	FrameIndex TOMP C 0 0
+}
+//LISA plasma DMR uncharged
+Model HDLisa{
+	Model 0 "models/Peppergrinder/Weapons/lisa/wiseau-TOMPD0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/lisa/wiseau-TOMPD0.png"
+	AngleOffset 270
+	Scale 9 9 9
+	FrameIndex TOMP D 0 0
+}
+//LISA plasma DMR no scope charged
+Model HDLisa{
+	Model 0 "models/Peppergrinder/Weapons/lisa/wiseau-TOMPA0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/lisa/wiseau-TOMPA0.png"
+	AngleOffset 270
+	Scale 9 9 9
+	FrameIndex TOMP A 0 0
+}
+//LISA plasma DMR no scope uncharged
+Model HDLisa{
+	Model 0 "models/Peppergrinder/Weapons/lisa/wiseau-TOMPB0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/lisa/wiseau-TOMPB0.png"
+	AngleOffset 270
+	Scale 9 9 9
+	FrameIndex TOMP B 0 0
+}
+//Yeyuze "China Lake"
+Model HDChinaLake{
+	Model 0 "models/Peppergrinder/Weapons/yeyuze/yeyuze.obj"
+	Skin 0 "models/Peppergrinder/Weapons/yeyuze/yeyuze.png"
+	AngleOffset 270
+	Scale 10 10 10
+	FrameIndex YEYU P 0 0
+}
+//ZM94 loaded
+Model ZM94Rifle{
+	Model 0 "models/Peppergrinder/Weapons/zm94/zm94-0-ZM94A0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/zm94/zm94-0-ZM94A0.png"
+	AngleOffset 270
+	Scale 10 10	10
+	FrameIndex ZM94 A 0 0
+}
+//ZM94 unloaded
+Model ZM94Rifle{
+	Model 0 "models/Peppergrinder/Weapons/zm94/zm94-0-ZM94B0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/zm94/zm94-0-ZM94B0.png"
+	AngleOffset 270
+	Scale 10 10	10
+	FrameIndex ZM94 B 0 0
+}
+//ZM94C loaded
+Model ZM94Rifle{
+	Model 0 "models/Peppergrinder/Weapons/zm94/zm94-0-ZM94C0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/zm94/zm94-0-ZM94C0.png"
+	AngleOffset 270
+	Scale 10 10	10
+	FrameIndex ZM94 C 0 0
+}
+//ZM94C unloaded
+Model ZM94Rifle{
+	Model 0 "models/Peppergrinder/Weapons/zm94/zm94-0-ZM94D0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/zm94/zm94-0-ZM94D0.png"
+	AngleOffset 270
+	Scale 10 10	10
+	FrameIndex ZM94 D 0 0
+}
+//ZM94 mag loaded
+Model HDZM94Mag{
+	Model 0 "models/Peppergrinder/Weapons/zm94/zm94-0-OMG5A0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/zm94/zm94-0-OMG5A0.png"
+	AngleOffset 270
+	Scale 10 10	10
+	FrameIndex OMG5 A 0 0
+}
+//ZM94 mag unloaded
+Model HDZM94EmptyMag{
+	Model 0 "models/Peppergrinder/Weapons/zm94/zm94-0-OMG5B0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/zm94/zm94-0-OMG5B0.png"
+	AngleOffset 270
+	Scale 10 10	10
+	FrameIndex OMG5 B 0 0
+}
+//Scorcher
+Model HDZorcher{
+	Model 0 "models/Peppergrinder/Weapons/zorcher/zorcher.obj"
+	Skin 0 "models/Peppergrinder/Weapons/zorcher/zorcher.png"
+	AngleOffset 90
+	Scale 13 13	13
+	FrameIndex ZORP A 0 0
+}
+
+
+//									SCOPED SLAYER START
+
+//ScopedSlayer sidesaddle 12/12
+Model ScopedSlayer{
+	Model 0 "models/Peppergrinder/Weapons/scopedslayer/scopedslayer-0-SLSCA0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/scopedslayer/scopedslayer-0-SLSCA0.png"
+	AngleOffset 90
+	Scale 10 10	10
+	FrameIndex SLSC A 0 0
+}
+//ScopedSlayer sidesaddle 10/12
+Model ScopedSlayer{
+	Model 0 "models/Peppergrinder/Weapons/scopedslayer/scopedslayer-0-SLSCB0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/scopedslayer/scopedslayer-0-SLSCB0.png"
+	AngleOffset 90
+	Scale 10 10	10
+	FrameIndex SLSC B 0 0
+}
+//ScopedSlayer sidesaddle 8/12
+Model ScopedSlayer{
+	Model 0 "models/Peppergrinder/Weapons/scopedslayer/scopedslayer-0-SLSCC0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/scopedslayer/scopedslayer-0-SLSCC0.png"
+	AngleOffset 90
+	Scale 10 10	10
+	FrameIndex SLSC C 0 0
+}
+//ScopedSlayer sidesaddle 6/12
+Model ScopedSlayer{
+	Model 0 "models/Peppergrinder/Weapons/scopedslayer/scopedslayer-0-SLSCD0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/scopedslayer/scopedslayer-0-SLSCD0.png"
+	AngleOffset 90
+	Scale 10 10	10
+	FrameIndex SLSC D 0 0
+}
+//ScopedSlayer sidesaddle 4/12
+Model ScopedSlayer{
+	Model 0 "models/Peppergrinder/Weapons/scopedslayer/scopedslayer-0-SLSCE0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/scopedslayer/scopedslayer-0-SLSCE0.png"
+	AngleOffset 90
+	Scale 10 10	10
+	FrameIndex SLSC E 0 0
+}
+//ScopedSlayer sidesaddle 2/12
+Model ScopedSlayer{
+	Model 0 "models/Peppergrinder/Weapons/scopedslayer/scopedslayer-0-SLSCF0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/scopedslayer/scopedslayer-0-SLSCF0.png"
+	AngleOffset 90
+	Scale 10 10	10
+	FrameIndex SLSC F 0 0
+}
+//ScopedSlayer sidesaddle 0/12
+Model ScopedSlayer{
+	Model 0 "models/Peppergrinder/Weapons/scopedslayer/scopedslayer-0-SLSCG0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/scopedslayer/scopedslayer-0-SLSCG0.png"
+	AngleOffset 90
+	Scale 10 10	10
+	FrameIndex SLSC G 0 0
+}
+//									SCOPED SLAYER END
+
+
+//Helzing magnum pistol loaded
+Model HDHelzing{
+	Model 0 "models/Peppergrinder/Weapons/helzingmp/helzingmp-HMPTA0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/helzingmp/helzingmp-HMPTA0.png"
+	AngleOffset 270
+	Scale 10 10	10
+	FrameIndex HMPT A 0 0
+}
+//Helzing magnum pistol loaded bottle
+Model HDHelzing{
+	Model 0 "models/Peppergrinder/Weapons/helzingmp/helzingmp-HMPTB0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/helzingmp/helzingmp-HMPTB0.png"
+	AngleOffset 270
+	Scale 10 10	10
+	FrameIndex HMPT B 0 0
+}
+//Helzing magnum pistol unloaded
+Model HDHelzing{
+	Model 0 "models/Peppergrinder/Weapons/helzingmp/helzingmp-HMPTC0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/helzingmp/helzingmp-HMPTC0.png"
+	AngleOffset 270
+	Scale 10 10	10
+	FrameIndex HMPT C 0 0
+}
+//Helzing magnum pistol unloaded bottle
+Model HDHelzing{
+	Model 0 "models/Peppergrinder/Weapons/helzingmp/helzingmp-HMPTD0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/helzingmp/helzingmp-HMPTD0.png"
+	AngleOffset 270
+	Scale 10 10	10
+	FrameIndex HMPT D 0 0
+}
+//Helzing magnum pistol mag loaded
+Model HD355mag{
+	Model 0 "models/Peppergrinder/Weapons/helzingmp/helzingmp-0-3MAGA0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/helzingmp/helzingmp-0-3MAGA0.png"
+	AngleOffset 0
+	Scale 10 10	14
+	FrameIndex 3MAG B 0 0
+}
+//Helzing magnum pistol mag unloaded
+Model HD355mag{
+	Model 0 "models/Peppergrinder/Weapons/helzingmp/helzingmp-0-3MAGC0.obj"
+	Skin 0 "models/Peppergrinder/Weapons/helzingmp/helzingmp-0-3MAGC0.png"
+	AngleOffset 0
+	Scale 10 10	14
+	FrameIndex 3MAG A 0 0
+}
+//Bastard rifle
+Model HDBastardRifle{
+	Model 0 "models/Peppergrinder/Weapons/bastard/bastardrifle.obj"
+	Skin 0 "models/Peppergrinder/Weapons/bastard/bastardrifle.png"
+	AngleOffset 0
+	Scale 10 10	10
+	FrameIndex BSPA A 0 0
+}
+//Guillotine chambered
+Model HDGuillotine{
+	Model 0 "models/Peppergrinder/Weapons/guillotine/guillotine-0-EMLPA.obj"
+	Skin 0 "models/Peppergrinder/Weapons/guillotine/guillotine-0-EMLPA.png"
+	Angleoffset 90
+	Scale 8 8 8
+	FrameIndex EMLP A 0 0
+}
+//Guillotine open
+Model HDGuillotine{
+	Model 0 "models/Peppergrinder/Weapons/guillotine/guillotine-0-EMLPB.obj"
+	Skin 0 "models/Peppergrinder/Weapons/guillotine/guillotine-0-EMLPB.png"
+	Angleoffset 90
+	Scale 8 8 8
+	FrameIndex EMLP B 0 0
+}

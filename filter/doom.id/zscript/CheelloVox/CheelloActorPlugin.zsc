@@ -1,0 +1,25 @@
+//===========================================================================
+//
+// CHEELLO VOXEL DOOM
+//
+// ZScript code: Copyright (C) 2022 - 2023 Nash Muhandes
+//
+// License: MIT
+//
+//===========================================================================
+
+//===========================================================================
+//
+// CheelloActorPlugin
+// A "plugin" (if you will) to inject custom behavior into existing actors
+// via a DoEffect override.
+//
+//===========================================================================
+
+class CheelloActorPlugin : Inventory abstract
+{
+	Default
+	{
+		Inventory.MaxAmount 1;
+	}
+}

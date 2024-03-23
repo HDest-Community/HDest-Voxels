@@ -1,0 +1,42 @@
+//===========================================================================
+//
+// CHEELLO VOXEL DOOM
+//
+// ZScript code: Copyright (C) 2022 - 2023 Nash Muhandes
+//
+// License: MIT
+//
+//===========================================================================
+
+//===========================================================================
+//
+// CheelloVoxPrecacher
+// Ensures this mod doesn't end up in Digital Foundry's Stuttering Hall of
+// Shame... ;)
+//
+// (Shoutout to Alex Battaglia - keep fightin' the good fight, man! - Nash)
+//
+// Technical details:
+// This actor gets spawned upon first entry of a level, with its Spawn
+// state being set to a specific voxel frame of an actual Actor in the level.
+// This forces the voxel to be loaded into VRAM.
+//
+//===========================================================================
+
+class CheelloVoxPrecacher : Actor
+{
+	Default
+	{
+		RenderStyle "Translucent";
+		Alpha 0.0001;
+		FloatBobPhase 0;
+		+NOINTERACTION
+	}
+
+	States
+	{
+	Spawn:
+		"####" "#" 3;
+		Stop;
+	}
+}

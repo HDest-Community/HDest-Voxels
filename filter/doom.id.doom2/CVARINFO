@@ -1,0 +1,2 @@
+server bool cheello_iconofsinvoxel = true;
+server noarchive bool cheello_icondebug = false;

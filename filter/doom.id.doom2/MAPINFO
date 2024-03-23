@@ -1,0 +1,4 @@
+GameInfo
+{
+	AddEventHandlers = "CheelloVoxDoom2Handler"
+}

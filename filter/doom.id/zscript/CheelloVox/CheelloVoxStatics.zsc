@@ -1,0 +1,86 @@
+//===========================================================================
+//
+// CHEELLO VOXEL DOOM
+//
+// ZScript code: Copyright (C) 2022 - 2023 Nash Muhandes
+//
+// License: MIT
+//
+//===========================================================================
+
+class CheelloVoxStatics
+{
+	static double, double AnglesTo(Vector3 p1, Vector3 p2)
+	{
+		let diffVec = Level.Vec3Diff(p1, p2);
+		double angle = VectorAngle(diffVec.X, diffVec.Y);
+		double pitch = -VectorAngle(diffVec.Length(), diffVec.Z);
+		return angle, pitch;
+	}
+
+	play static void A_Spin(Actor mo)
+	{
+		if (!mo)
+			return;
+
+		mo.A_SetAngle(mo.Angle + 3.33, SPF_INTERPOLATE);
+	}
+
+	play static void AlignToPlane(Actor self, double pitchAdjust = 0, bool ceiling = false)
+	{
+		// AlignToPlane
+		// Original code written by ZZYZX
+		// Modifications and improvements by Nash Muhandes
+
+		// Note: I leave the 'self' references intact because in my other projects
+		// that reuse this method, this is usually a static method.
+		// This helps with copy/pasting when doing an update pass on all of them.
+
+		if (!self)
+			return;
+
+		Vector3 norm;
+
+		// [Nash] so many workarounds for 3D floors...
+		Sector floorSec, ceilSec;
+		F3DFloor f3d, c3d;
+		double fh, ch;
+		[fh, floorSec, f3d] = self.CurSector.NextLowestFloorAt(self.Pos.X, self.Pos.Y, self.Pos.Z + 0.001);
+		[ch, ceilSec, c3d] = self.CurSector.NextHighestCeilingAt(self.Pos.X, self.Pos.Y, self.Pos.Z - 0.001, self.Pos.Z + self.Height - 0.001);
+
+		if (!ceiling)
+		{
+			if (f3d)
+				norm = f3d.bottom.Normal;
+			else
+				norm = self.CurSector.FloorPlane.Normal;
+		}
+		else
+		{
+			if (c3d)
+				norm = c3d.top.Normal;
+			else
+				norm = self.CurSector.CeilingPlane.Normal;
+		}
+
+		Vector2 norm_p1 = (norm.X != 0 || norm.Y != 0) ? (norm.X, norm.Y).Unit() : (0, 0);
+		Vector2 norm_p2 = ((norm.X, norm.Y).Length(), norm.Z);
+		double dang = self.Angle;
+		double fang = atan2(norm_p1.Y, norm_p1.X);
+		double fpitch = atan2(norm_p2.X, norm_p2.Y);
+		double ddiff1 = sin(fang - (dang - pitchAdjust));
+		double ddiff2 = cos(fang - dang);
+		self.Pitch = (fpitch * ddiff2 - pitchAdjust);
+		self.Roll = -fpitch * ddiff1;
+		self.Angle = dang;
+	}
+
+	static bool IsSigil(void)
+	{
+		// crude, but works for now.
+		if (Wads.FindLump('SIGILTEX') != -1)
+			return true;
+
+		return false;
+	}
+}
