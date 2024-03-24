@@ -49,7 +49,7 @@ everything else by Mickromash.
 
 _Originally made by Hara_
 
-Specific voxel models uncertain, credits generally given to CannibalHunter and prettyFist
+Voxel assets originally made by Hara with edits made by CannibalHunter and minor fixes made by prettyFist.
 
 Original Peppergrinder Voxels Readme:
 
