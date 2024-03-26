@@ -66,3 +66,22 @@ the Peppergrinder addon with voxel editions.
 Format & incompatibilities fixed by CannibalHunter (yo cannibal, pls fill this out better than i can lmao)
 Minor fixes by prettyFist
 ```
+
+### Radtech Items & Weapons Pickups
+
+_Originally made by Swampyrad_
+
+Note, the requirement to have Cheello's Voxel Doom is no longer needed, as those voxel assets are included in this pack due to the above permission.
+
+Original Radtech Voxels Readme:
+
+```
+RadTechVoxelPack
+A voxel plug-in for RadTech Weapons Pack
+
+Adds voxel models for weapon and items
+from the RadTech Weapons and Item Packs.
+
+Requires Cheello's Voxel Doom mod, since the
+Doomed Shotgun and DM-97 Plasma Rifle need it to work.
+```
