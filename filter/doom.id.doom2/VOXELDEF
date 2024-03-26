@@ -82,8 +82,7 @@ vilex = "vilex" { UseActorPitch UseActorRoll }
 viley = "viley" { UseActorPitch UseActorRoll }
 vilez = "vilez" { UseActorPitch UseActorRoll }
 vile[ = "vile[" {}
-vile\ = "vile^" {}
-// vil2a = "vil2a" {} // temporary hack!!!
+vile\ = "vil2a" {}
 vile] = "vile]" {}
 
 /*
