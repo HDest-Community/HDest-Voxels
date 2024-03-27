@@ -51,6 +51,8 @@ _Originally made by Hara_
 
 Voxel assets originally made by Hara with edits made by CannibalHunter and minor fixes made by prettyFist.
 
+Greely & Box Cannon Voxels updated by Thomased22
+
 Original Peppergrinder Voxels Readme:
 
 ```

@@ -138,6 +138,14 @@ Model HDBoxCannon{
 	Scale 10 10 10
 	FrameIndex MPS1 N 0 0
 }
+//BoxCannon w/stock, ext barrel
+Model HDBoxCannon{
+	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt0brt1stk1.obj"
+	Skin 0 "models/Peppergrinder/Weapons/BoxCannon/mgt0brt1stk1.png"
+	AngleOffset 90
+	Scale 10 10 10
+	FrameIndex MPS1 F 0 0
+}
 //BoxCannon xmag
 Model HDBoxCannon{
 	Model 0 "models/Peppergrinder/Weapons/BoxCannon/mgt1brt0stk0.obj"
