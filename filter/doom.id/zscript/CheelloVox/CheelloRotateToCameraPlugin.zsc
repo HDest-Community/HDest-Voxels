@@ -24,7 +24,7 @@ class CheelloRotateToCameraPlugin : CheelloActorPlugin
 		if (!Owner) return;
 
 		// TO DO: remove this hack when angle-fixing maphacks get implemented
-		if (Owner is "EvilEye" && !CheelloVoxStatics.IsSigil()) return;
+		if (Owner is "HDEvilEye" && !CheelloVoxStatics.IsSigil()) return;
 
 		Actor cam = players[consoleplayer].camera;
 		if (cam && cam.CheckLocalView())
