@@ -21,14 +21,12 @@ class CheelloSpinPlugin : CheelloActorPlugin
 	{
 		Super.DoEffect();
 
-		if (!Owner)
-			return;
+		if (!Owner) return;
 
 		if (Owner.bSpecial && cheello_spinningpickups > 0)
 		{
 			// don't spin dropped items (if the user chooses it)
-			if (Owner.bDropped && cheello_spinningpickups == 2)
-				return;
+			if (Owner.bDropped && cheello_spinningpickups == 2) return;
 
 			CheelloVoxStatics.A_Spin(Owner);
 		}

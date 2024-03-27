@@ -24,8 +24,7 @@ class CheelloVoxDoom2Handler : EventHandler
 	{
 		SpawnIconOfSinVoxels();
 
-		if (!cheello_noprecache)
-			PrecacheVoxelsDoom2();
+		if (!cheello_noprecache) PrecacheVoxelsDoom2();
 
 		ApplyRomeroHack();
 	}

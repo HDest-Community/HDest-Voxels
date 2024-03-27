@@ -19,8 +19,7 @@ class CheelloVoxHandler : EventHandler
 {
 	override void WorldLoaded(WorldEvent e)
 	{
-		if (!cheello_noprecache)
-			PrecacheVoxelsDoom1();
+		if (!cheello_noprecache) PrecacheVoxelsDoom1();
 	}
 
 	override void WorldThingDied(WorldEvent e)
@@ -32,8 +31,7 @@ class CheelloVoxHandler : EventHandler
 
 	override void WorldThingSpawned(WorldEvent e)
 	{
-		if (!e.Thing)
-			return;
+		if (!e.Thing) return;
 
 		// install the face-to-camera plugin for objects that need them
 		bool isSphere =
@@ -46,8 +44,7 @@ class CheelloVoxHandler : EventHandler
 			e.Thing is "HDEvilEye"
 		);
 
-		if (isSphere)
-			e.Thing.A_GiveInventory("CheelloRotateToCameraPlugin", 1);
+		if (isSphere) e.Thing.A_GiveInventory("CheelloRotateToCameraPlugin", 1);
 
 		// install spinning items plugin
 		// bool isSpinning =
@@ -78,8 +75,7 @@ class CheelloVoxHandler : EventHandler
 		// Randomize initial angle to reduce uiniformity
 		if (isRandomAngle && level.MapName != 'RANGE' /* || (isSpinning && cheello_spinningpickups) */) e.Thing.A_SetAngle(frandom[rnd_InitSpin](0, 360));
 
-		if (isSphere /* || isSpinning */)
-			e.Thing.bInterpolateAngles = true;
+		if (isSphere /* || isSpinning */) e.Thing.bInterpolateAngles = true;
 	}
 
 	override void PlayerEntered(PlayerEvent e)

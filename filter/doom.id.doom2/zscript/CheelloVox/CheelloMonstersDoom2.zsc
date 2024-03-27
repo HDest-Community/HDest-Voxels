@@ -226,8 +226,7 @@ class CheelloSpawnShot : SpawnShot replaces SpawnShot
 	{
 		Super.Tick();
 
-		if (!bNoTimeFreeze && isFrozen())
-			return;
+		if (!bNoTimeFreeze && isFrozen()) return;
 
 		CheelloVoxStatics.A_Spin(self);
 	}

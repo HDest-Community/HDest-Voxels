@@ -20,10 +20,7 @@ class CheelloVoxStatics
 
 	play static void A_Spin(Actor mo)
 	{
-		if (!mo)
-			return;
-
-		mo.A_SetAngle(mo.Angle + 3.33, SPF_INTERPOLATE);
+		if (mo) mo.A_SetAngle(mo.Angle + 3.33, SPF_INTERPOLATE);
 	}
 
 	play static void AlignToPlane(Actor self, double pitchAdjust = 0, bool ceiling = false)
@@ -36,8 +33,7 @@ class CheelloVoxStatics
 		// that reuse this method, this is usually a static method.
 		// This helps with copy/pasting when doing an update pass on all of them.
 
-		if (!self)
-			return;
+		if (!self) return;
 
 		Vector3 norm;
 
@@ -50,17 +46,15 @@ class CheelloVoxStatics
 
 		if (!ceiling)
 		{
-			if (f3d)
-				norm = f3d.bottom.Normal;
-			else
-				norm = self.CurSector.FloorPlane.Normal;
+			norm = f3d
+				? f3d.bottom.Normal
+				: self.CurSector.FloorPlane.Normal;
 		}
 		else
 		{
-			if (c3d)
-				norm = c3d.top.Normal;
-			else
-				norm = self.CurSector.CeilingPlane.Normal;
+			norm = c3d
+				? c3d.top.Normal
+				: self.CurSector.CeilingPlane.Normal;
 		}
 
 		Vector2 norm_p1 = (norm.X != 0 || norm.Y != 0) ? (norm.X, norm.Y).Unit() : (0, 0);
@@ -78,9 +72,6 @@ class CheelloVoxStatics
 	static bool IsSigil(void)
 	{
 		// crude, but works for now.
-		if (Wads.FindLump('SIGILTEX') != -1)
-			return true;
-
-		return false;
+		return Wads.FindLump('SIGILTEX') != -1;
 	}
 }
