@@ -50,30 +50,35 @@ class CheelloVoxHandler : EventHandler
 			e.Thing.A_GiveInventory("CheelloRotateToCameraPlugin", 1);
 
 		// install spinning items plugin
-		bool isSpinning =
+		// bool isSpinning =
+		// (
+		// 	e.Thing is "HDWeapon" ||
+		// 	e.Thing is "Chainsaw" ||
+		// 	e.Thing is "RadSuit" ||
+		// 	e.Thing is "Allmap" ||
+		// 	e.Thing is "Infrared" ||
+		// 	e.Thing is "ArmorBonus" ||
+		// 	e.Thing is "HDArmour" ||
+		// 	e.Thing is "BlueArmor" ||
+		// 	e.Thing is "HealthBonus" ||
+		// 	e.Thing is "DoomKey" ||
+		// 	e.Thing is "Putto"
+		// );
+
+		// if (isSpinning) e.Thing.A_GiveInventory("CheelloSpinPlugin", 1);
+
+		bool isRandomAngle = 
 		(
-			e.Thing is "DoomWeapon" ||
-			e.Thing is "Chainsaw" ||
-			e.Thing is "RadSuit" ||
-			e.Thing is "Allmap" ||
-			e.Thing is "Infrared" ||
-			e.Thing is "ArmorBonus" ||
-			e.Thing is "GreenArmor" ||
-			e.Thing is "BlueArmor" ||
-			e.Thing is "HealthBonus" ||
-			e.Thing is "DoomKey"
+			e.Thing is "HDWeapon" ||
+			e.Thing is "PortableMedikit" ||
+			e.Thing is "HDAmmo" ||
+			e.Thing is "SquadSummoner"
 		);
 
-		if (isSpinning)
-		{
-			e.Thing.A_GiveInventory("CheelloSpinPlugin", 1);
+		// Randomize initial angle to reduce uiniformity
+		if (isRandomAngle && level.MapName != 'RANGE' /* || (isSpinning && cheello_spinningpickups) */) e.Thing.A_SetAngle(frandom[rnd_InitSpin](0, 360));
 
-			// randomize initial angle to reduce uniformity
-			if (cheello_spinningpickups > 0)
-				e.Thing.A_SetAngle(frandom[rnd_InitSpin](0, 360));
-		}
-
-		if (isSphere || isSpinning)
+		if (isSphere /* || isSpinning */)
 			e.Thing.bInterpolateAngles = true;
 	}
 
