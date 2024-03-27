@@ -38,11 +38,12 @@ class CheelloVoxHandler : EventHandler
 		// install the face-to-camera plugin for objects that need them
 		bool isSphere =
 		(
-			e.Thing is "HDInvulnerabilitySphere" ||
-			e.Thing is "HDSoulsphere" ||
+			// HDInvulnerabilitySphere & HDMegasphere both extend HDSoulSphere already
+			// e.Thing is "HDInvulnerabilitySphere" ||
+			// e.Thing is "HDMegasphere" ||
+			e.Thing is "HDSoulSphere" ||
 			e.Thing is "HDBlurSphere" ||
-			e.Thing is "HDMegasphere" ||
-			e.Thing is "EvilEye"
+			e.Thing is "HDEvilEye"
 		);
 
 		if (isSphere)
