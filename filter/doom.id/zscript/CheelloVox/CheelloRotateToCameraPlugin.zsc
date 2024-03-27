@@ -17,9 +17,9 @@
 
 class CheelloRotateToCameraPlugin : CheelloActorPlugin
 {
-	override void DoEffect(void)
+	override void Tick()
 	{
-		Super.DoEffect();
+		Super.Tick();
 
 		if (!Owner)
 			return;
