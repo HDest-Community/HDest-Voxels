@@ -4,8 +4,8 @@
 o AURPA0
 
 # material
-mtllib aurochsnormal.mtl
-usemtl palette
+# mtllib aurochsnormal.mtl
+# usemtl palette
 
 # normals
 vn -1 0 0

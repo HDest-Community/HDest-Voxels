@@ -4,8 +4,8 @@
 o 
 
 # material
-mtllib BC6C.mtl
-usemtl palette
+# mtllib BC6C.mtl
+# usemtl palette
 
 # normals
 vn -1 0 0

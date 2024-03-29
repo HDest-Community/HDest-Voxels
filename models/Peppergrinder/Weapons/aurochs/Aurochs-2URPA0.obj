@@ -4,8 +4,8 @@
 o 2URPA0
 
 # material
-mtllib aurochsalt.mtl
-usemtl palette
+# mtllib aurochsalt.mtl
+# usemtl palette
 
 # normals
 vn -1 0 0

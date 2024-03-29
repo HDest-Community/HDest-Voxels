@@ -4,8 +4,8 @@
 o GSGPA0
 
 # material
-mtllib grlyA.mtl
-usemtl palette
+# mtllib grlyA.mtl
+# usemtl palette
 
 # normals
 vn -1 0 0

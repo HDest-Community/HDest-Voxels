@@ -4,8 +4,8 @@
 o AUTPA0
 
 # material
-mtllib auto5scopenoshell.mtl
-usemtl palette
+# mtllib auto5scopenoshell.mtl
+# usemtl palette
 
 # normals
 vn -1 0 0

@@ -100,7 +100,7 @@ Model HDAurochs{
 	Model 0 "models/Peppergrinder/Weapons/aurochs/Aurochs-AURPA0.obj"
 	Skin 0 "models/Peppergrinder/Weapons/aurochs/Aurochs-AURPA0.png"
 	AngleOffset 270
-	Scale 15 15 15
+	Scale 11 11 11
 	FrameIndex AURP A 0 0
 }
 //Aurochs hammer back
@@ -108,7 +108,7 @@ Model HDAurochs{
 	Model 0 "models/Peppergrinder/Weapons/aurochs/Aurochs-AURPB0.obj"
 	Skin 0 "models/Peppergrinder/Weapons/aurochs/Aurochs-AURPB0.png"
 	AngleOffset 270
-	Scale 15 15 15
+	Scale 11 11 11
 	FrameIndex AURP B 0 0
 }
 //Aurochs alt
@@ -116,7 +116,7 @@ Model HDAurochs{
 	Model 0 "models/Peppergrinder/Weapons/aurochs/Aurochs-2URPA0.obj"
 	Skin 0 "models/Peppergrinder/Weapons/aurochs/Aurochs-2URPA0.png"
 	AngleOffset 270
-	Scale 15 15 15
+	Scale 11 11 11
 	FrameIndex 2URP A 0 0
 }
 //Aurochs alt hammer back
@@ -124,7 +124,7 @@ Model HDAurochs{
 	Model 0 "models/Peppergrinder/Weapons/aurochs/Aurochs-2URPB0.obj"
 	Skin 0 "models/Peppergrinder/Weapons/aurochs/Aurochs-2URPB0.png"
 	AngleOffset 270
-	Scale 15 15 15
+	Scale 11 11 11
 	FrameIndex 2URP B 0 0
 }
 
@@ -397,7 +397,7 @@ Model HDTROGRifle{
 	Model 0 "models/Peppergrinder/Weapons/trog/TRG-0-TRG1A0.obj"
 	Skin 0 "models/Peppergrinder/Weapons/trog/TRG-0-TRG1A0.png"
 	AngleOffset 270
-	Scale 10 10 10
+	Scale 10.5 10.5 10.5
 	FrameIndex TRG1 A 0 0
 }
 //TROG unloaded
@@ -405,7 +405,7 @@ Model HDTROGRifle{
 	Model 0 "models/Peppergrinder/Weapons/trog/TRG-0-TRG1B0.obj"
 	Skin 0 "models/Peppergrinder/Weapons/trog/TRG-0-TRG1B0.png"
 	AngleOffset 270
-	Scale 10 10 10
+	Scale 10.5 10.5 10.5
 	FrameIndex TRG1 D 0 0
 }
 //TROG mag loaded

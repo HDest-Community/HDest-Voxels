@@ -4,8 +4,8 @@
 o AURPA0
 
 # material
-mtllib aurochsnormalhammerback.mtl
-usemtl palette
+# mtllib aurochsnormalhammerback.mtl
+# usemtl palette
 
 # normals
 vn -1 0 0

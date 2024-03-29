@@ -4,8 +4,8 @@
 o Mau-mgt0brt0stk0
 
 # material
-mtllib BC4C.mtl
-usemtl palette
+# mtllib BC4C.mtl
+# usemtl palette
 
 # normals
 vn 1 0 0
