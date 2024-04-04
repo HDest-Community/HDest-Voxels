@@ -1,6 +1,16 @@
 # HDest Voxels
 
+[![Nightly Build](https://github.com/HDest-Community/HDest-Voxels/actions/workflows/nightly.yml/badge.svg)](https://github.com/HDest-Community/HDest-Voxels/actions/workflows/nightly.yml)
 
+Voxels, for your hideous destruction.
+
+### Note
+
+Due to the way GZDoom loads Voxels/Models, the original sprite lumps need to be loaded in order for the voxels to replace them.  Because of this, simply downloading the repo as a ZIP will then require each addon to be loaded.  This can be circumvented by deleting the `VOXELDEF` or `MODELDEF` for the addons you choose not to run with (for example, If not running Peppergrinder, remove the `MODELDEF.peppergrinder` file from the root of the ZIP/repo to prevent GZDoom from attempting to load those voxels).
+
+However, There is a nightly build of this project that already splits out the various voxels/models for Vanilla Doom/HDest, Peppergrinder, Radtech, and other future addon voxels into separate PK3s, as well as providing a "Full" PK3 for those that have all of the included addons and don't want to load multiple files.  You can grab the latest nightly build below:
+
+[Latest Nightly Build](https://nightly.link/HDest-Community/HDest-Voxels/workflows/nightly/main/Artifacts.zip)
 
 ## Credits
 
