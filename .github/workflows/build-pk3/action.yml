@@ -19,4 +19,4 @@ runs:
 
   - uses: montudor/action-zip@v1
     with:
-      args: zip -r "HDest-Voxels-full-${{ env.SUFFIX }}.pk3" . -i filter/* models/* voxels/* CHANGELOG.md LICENSE LICENSE.VoxelDoom MODELDEF.* README.md VOXELDEF.*
+      args: zip -r "HDest-Voxels-Full-${{ env.SUFFIX }}.pk3" . -i filter/* models/* voxels/* CHANGELOG.md LICENSE LICENSE.VoxelDoom MODELDEF.* README.md VOXELDEF.*
